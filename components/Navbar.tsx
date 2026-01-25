@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-6 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-4 md:py-6 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4 shadow-lg' : 'bg-black/40 backdrop-blur-sm md:bg-transparent'
           }`}
       >
         {/* Logo Left */}

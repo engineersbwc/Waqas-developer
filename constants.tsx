@@ -189,7 +189,7 @@ export const PROJECTS: Project[] = [
 export const SERVICES: Service[] = [
   {
     id: 's1',
-    title: 'Full Web Design & Development',
+    title: 'Web Design & Development',
     description: 'We build scalable, secure, and high-performance web solutions tailored to meet your business goals with precision and scalability.',
     image: '/images/web-development.jpg',
     icon: '💻'
