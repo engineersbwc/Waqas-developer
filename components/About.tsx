@@ -12,7 +12,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-32 px-6 bg-[#0a0a0a] relative overflow-hidden">
+    <section id="about" className="py-12 md:py-16 px-6 bg-[#0a0a0a] relative overflow-hidden">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#f5ba41]/5 rounded-full blur-[120px] -mr-64 -mt-64"></div>
 

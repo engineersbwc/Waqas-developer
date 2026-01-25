@@ -48,14 +48,10 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-[#000000]">
       <ScrollIndicator />
       <Navbar onContactClick={triggerContact} />
-      
+
       <main className="transition-all duration-300">
         <Reveal>
           <Hero onContactClick={triggerContact} />
-        </Reveal>
-        
-        <Reveal>
-          <OurWork onProjectClick={handleOpenProject} />
         </Reveal>
 
         <Reveal>
@@ -63,29 +59,33 @@ const App: React.FC = () => {
         </Reveal>
 
         <Reveal>
+          <OurWork onProjectClick={handleOpenProject} />
+        </Reveal>
+
+        <Reveal>
           <About />
         </Reveal>
-        
+
         <Process />
-        
+
         <Reveal>
           <Testimonials />
         </Reveal>
-        
+
         <Reveal>
           <FAQ />
         </Reveal>
-        
+
         <Reveal>
           <ContactCTA />
         </Reveal>
-        
+
         <Footer />
       </main>
 
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </div>
   );

@@ -8,37 +8,59 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   return (
-    <section id="home" className="min-h-[80vh] flex flex-col justify-center pt-24 pb-16 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto text-left w-full">
-        <div className="inline-block bg-[#f5ba41]/10 px-3 py-1 rounded-full mb-6 border border-[#f5ba41]/20">
-          <p className="text-[#f5ba41] text-[9px] font-black uppercase tracking-[0.3em]">Intelligent Solutions</p>
-        </div>
+    <section id="home" className="min-h-[80vh] flex flex-col justify-center pt-32 pb-4 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto w-full">
 
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1] mb-8 tracking-tighter">
-          We build <span className="text-[#f5ba41]">AI-powered</span> <br />
-          systems that automate <br />
-          business operations.
-        </h1>
+        {/* Two-column layout on desktop, single column on mobile */}
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 flex flex-col items-start space-y-8">
-            <p className="text-zinc-500 text-lg md:text-xl font-medium leading-relaxed">
-              We solve operational and growth problems through technology, delivering complete systems that combine mobile apps, web platforms, and research-backed AI automation.
+          {/* Left Column: Text Content (appears first on mobile = top) */}
+          <div className="lg:col-span-6 flex flex-col items-center lg:items-start space-y-6 lg:mt-0 text-center lg:text-left">
+            {/* Main Heading */}
+            <h1 className="text-2xl md:text-3xl lg:text-5xl font-black text-white leading-[1.1] tracking-tighter">
+              We build <span className="text-[#f5ba41]">AI-powered</span> systems that automate business operations
+            </h1>
+
+            {/* Subheading */}
+            <p className="text-base md:text-lg lg:text-xl font-medium leading-relaxed text-zinc-500">
+              Build & Launch Your Startup 5x Faster
             </p>
 
+            {/* Button - hidden on mobile, shown on desktop */}
             <button
               onClick={onContactClick}
-              className="bg-[#f5ba41] text-black px-10 py-5 rounded-full font-black text-lg hover:bg-white hover:scale-105 transition-all shadow-2xl yellow-glow inline-block whitespace-nowrap"
+              className="hidden lg:block bg-[#f5ba41] text-black px-8 py-4 md:px-10 md:py-5 rounded-lg border border-[#f5ba41] font-black text-base md:text-lg hover:bg-transparent hover:text-[#f5ba41] transition-all shadow-xl"
             >
-              Start Your Transformation
+              Book a Call
             </button>
+
+            {/* Description - hidden on mobile, shown on desktop */}
+            <p className="hidden lg:block text-zinc-600 text-sm md:text-base font-normal leading-relaxed pt-2">
+              We solve operational and growth problems through technology, delivering complete systems that combine mobile apps, web platforms, and research-backed AI automation.
+            </p>
           </div>
 
-          <div className="lg:col-span-7 relative w-full group">
-            <div className="absolute -inset-8 bg-[#f5ba41]/5 rounded-[3rem] blur-[80px] opacity-40"></div>
-            <div className="relative p-2 bg-[#111]/50 rounded-[2.5rem] border border-white/5 backdrop-blur-md">
+          {/* Right Column: Showcase (appears second on mobile = middle) */}
+          <div className="lg:col-span-6 relative w-full">
+            <div className="relative w-full aspect-[16/10] rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl">
               <ImageSlider />
             </div>
+            {/* Glow effect */}
+            <div className="absolute -inset-4 bg-[#f5ba41]/10 rounded-[3rem] blur-[60px] -z-10 pointer-events-none"></div>
+          </div>
+
+          {/* Mobile-only: Button and Description below showcase */}
+          <div className="lg:hidden flex flex-col items-center space-y-6 text-center w-full">
+            <button
+              onClick={onContactClick}
+              className="bg-[#f5ba41] text-black px-8 py-4 rounded-lg border border-[#f5ba41] font-black text-base hover:bg-transparent hover:text-[#f5ba41] transition-all shadow-xl"
+            >
+              Book a Call
+            </button>
+
+            <p className="text-zinc-600 text-sm font-normal leading-relaxed">
+              We solve operational and growth problems through technology, delivering complete systems that combine mobile apps, web platforms, and research-backed AI automation.
+            </p>
           </div>
         </div>
       </div>

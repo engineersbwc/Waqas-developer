@@ -4,66 +4,173 @@ import { STEPS } from '../constants';
 import { Reveal } from './Reveal';
 
 export const Process: React.FC = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % STEPS.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      const activeElement = scrollContainerRef.current.children[activeStep] as HTMLElement;
-      if (activeElement) {
-        const container = scrollContainerRef.current;
-        const targetScroll = activeElement.offsetTop - container.offsetTop - (container.clientHeight / 2) + (activeElement.clientHeight / 2);
-        container.scrollTo({ top: targetScroll, behavior: 'smooth' });
-      }
+  // Sync active index with scroll position
+  const handleScroll = () => {
+    if (!scrollRef.current || !isMobile) return;
+    const scrollPosition = scrollRef.current.scrollLeft;
+    const cardWidth = scrollRef.current.offsetWidth;
+    const newIndex = Math.round(scrollPosition / cardWidth);
+    if (newIndex !== activeIndex && newIndex < STEPS.length) {
+      setActiveIndex(newIndex);
     }
-  }, [activeStep]);
+  };
+
+  // Mouse drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!isMobile) return;
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
+    setScrollLeft(scrollRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current || !isMobile) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollRef.current.offsetLeft || 0);
+    const walk = (x - startX) * 2; // Scroll speed
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Automated flow: cycle through cards every 5 seconds (paused when user is mobile)
+  useEffect(() => {
+    if (isMobile) return;
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % STEPS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isMobile]);
 
   return (
-    <section id="process" className="py-20 px-6 bg-black overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <Reveal>
-              <div className="inline-block px-3 py-1 rounded-full border border-[#4ade80]/20 bg-[#4ade80]/5 mb-5">
-                <p className="text-[#4ade80] font-bold text-[9px] uppercase tracking-[0.3em]">Our Workflow</p>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 font-lexend tracking-tighter leading-[1]">
-                How We <span className="text-[#4ade80]">Work.</span>
-              </h2>
-              <p className="text-zinc-500 text-lg font-medium leading-relaxed max-w-sm">A streamlined journey from discovery to market dominance.</p>
-              <div className="flex space-x-1.5 mt-8">
-                {STEPS.map((_, idx) => (
-                  <div key={idx} className={`h-1 rounded-full transition-all duration-700 ${idx === activeStep ? 'w-10 bg-[#4ade80]' : 'w-2 bg-zinc-800'}`} />
-                ))}
-              </div>
-            </Reveal>
-          </div>
+    <section id="process" className="py-12 md:py-20 px-6 bg-black overflow-hidden relative">
+      <div className="max-w-7xl mx-auto">
 
-          <div ref={scrollContainerRef} className="lg:col-span-7 space-y-4 max-h-[500px] overflow-y-auto scrollbar-hide py-4">
+        {/* Centered Heading */}
+        <Reveal className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 leading-tight font-lexend">
+            You're just 5 steps away from<br />
+            launching your <span className="text-[#f5ba41]">Website</span> or <span className="text-[#4ade80]">App</span>!
+          </h2>
+          <p className="text-zinc-500 text-sm md:text-base font-medium font-inter uppercase tracking-widest">Our Strategic Workflow</p>
+        </Reveal>
+
+        {/* Process Carousel Container */}
+        <div className="relative">
+          {/* Main Grid/Flex Container */}
+          <div
+            ref={scrollRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onScroll={handleScroll}
+            className={`
+              flex md:grid md:grid-cols-5 gap-4 md:gap-6 
+              ${isMobile ? 'overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8' : 'overflow-hidden'}
+              cursor-grab active:cursor-grabbing transition-all duration-500
+            `}
+            style={{
+              scrollBehavior: isDragging ? 'auto' : 'smooth'
+            }}
+          >
             {STEPS.map((step, index) => {
-              const isActive = index === activeStep;
+              const isActive = index === activeIndex;
               return (
-                <div key={step.id} className={`relative bg-white/[0.02] border rounded-[1.2rem] p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6 transition-all duration-700 cursor-pointer ${isActive ? 'border-[#4ade80]/30 bg-white/[0.04] scale-100 opacity-100' : 'border-white/5 scale-[0.97] opacity-40 grayscale'}`} onClick={() => setActiveStep(index)}>
-                  <div className="flex items-center space-x-5">
-                    <div className={`text-3xl md:text-4xl font-black font-lexend ${isActive ? 'text-[#4ade80]' : 'text-zinc-800'}`}>{step.number}</div>
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-700 ${isActive ? 'bg-zinc-900 border border-[#4ade80]/20 scale-110' : 'bg-white/5 border border-white/5 scale-100'}`}>
-                      <div className={`scale-75 ${isActive ? 'text-[#4ade80]' : 'text-zinc-600'}`}>{step.icon}</div>
+                <div
+                  key={step.id}
+                  className={`
+                    w-[calc(100vw-3rem)] md:w-full flex-shrink-0 snap-center transition-all duration-700
+                    ${isActive ? 'opacity-100 scale-100' : 'opacity-40 scale-[0.98] blur-[1px]'}
+                  `}
+                >
+                  <div className={`
+                    h-full bg-[#0a0a0a]/80 backdrop-blur-sm border rounded-2xl p-5 md:p-6 lg:p-8 flex flex-col items-start
+                    transition-all duration-700 relative overflow-hidden group
+                    ${isActive ? 'border-[#f5ba41]/30 shadow-[0_0_50px_rgba(245,186,65,0.1)]' : 'border-white/5'}
+                  `}>
+                    {/* Animated Glow Effect */}
+                    {isActive && (
+                      <div className="absolute -inset-2 bg-[#f5ba41]/5 rounded-full blur-3xl animate-pulse pointer-events-none" />
+                    )}
+
+                    {/* Grainy Texture Overlay */}
+                    <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+
+                    {/* Step Number & Icon Row */}
+                    <div className="flex justify-between items-center w-full mb-4 md:mb-6">
+                      <span className={`
+                        text-[10px] md:text-xs font-bold tracking-[0.3em] transition-colors duration-500 uppercase
+                        ${isActive ? 'text-[#f5ba41]' : 'text-zinc-700'}
+                      `}>
+                        STEP {step.number}
+                      </span>
+                      <div className={`
+                        text-2xl md:text-3xl transition-all duration-700
+                        ${isActive ? 'scale-125 rotate-6 drop-shadow-[0_0_15px_rgba(245,186,65,0.6)]' : 'scale-100 opacity-60'}
+                      `}>
+                        {step.icon}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className={`text-lg font-black mb-1 uppercase tracking-tight font-lexend ${isActive ? 'text-white' : 'text-zinc-600'}`}>{step.title}</h4>
-                    <p className={`text-sm leading-relaxed font-medium ${isActive ? 'text-zinc-300' : 'text-zinc-700'}`}>{step.description}</p>
+
+                    {/* Title */}
+                    <h3 className={`
+                      text-base md:text-lg font-bold mb-1.5 md:mb-3 transition-colors duration-500 font-lexend
+                      ${isActive ? 'text-white' : 'text-zinc-500'}
+                    `}>
+                      {step.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className={`
+                      text-xs md:text-sm leading-snug md:leading-relaxed transition-colors duration-500 font-inter
+                      ${isActive ? 'text-zinc-400' : 'text-zinc-700'}
+                    `}>
+                      {step.description}
+                    </p>
+
+                    {/* Active Indicator Bar */}
+                    <div className={`
+                      absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-[#f5ba41] to-transparent transition-all duration-1000
+                      ${isActive ? 'w-full opacity-100' : 'w-0 opacity-0'}
+                    `} />
                   </div>
                 </div>
               );
             })}
+          </div>
+
+          {/* Progress Indicators (Dots) */}
+          <div className="flex justify-center gap-3 mt-4 md:mt-8">
+            {STEPS.map((_, index) => (
+              <div
+                key={index}
+                className={`
+                  h-1.5 transition-all duration-500 rounded-full
+                  ${index === activeIndex ? 'w-8 bg-[#f5ba41]' : 'w-2 bg-zinc-800'}
+                `}
+              />
+            ))}
           </div>
         </div>
       </div>

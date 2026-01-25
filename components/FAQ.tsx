@@ -6,7 +6,7 @@ export const FAQ: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="py-12 md:py-16 px-4 bg-white">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-black text-black text-center mb-16 font-lexend">FAQs</h2>
 

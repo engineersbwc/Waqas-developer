@@ -191,35 +191,35 @@ export const SERVICES: Service[] = [
     id: 's1',
     title: 'Full Web Design & Development',
     description: 'We build scalable, secure, and high-performance web solutions tailored to meet your business goals with precision and scalability.',
-    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800',
+    image: '/images/web-development.jpg',
     icon: '💻'
   },
   {
     id: 's2',
     title: 'Mobile App Development',
     description: 'Premium native and cross-platform apps designed for rapid growth, superior usability, and seamless user engagement.',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
+    image: '/images/mobile-app-dev.jpg',
     icon: '📱'
   },
   {
     id: 's3',
     title: 'AI Agents & Automation',
     description: 'Leverage cutting-edge AI to automate workflows, reduce operational costs, and stay ahead of the competitive curve.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
+    image: '/images/ai-automation-service.png',
     icon: '🤖'
   },
   {
     id: 's4',
     title: 'UI / UX Design',
     description: 'User-centric design systems that convert visitors into loyal customers through intuitive and minimalist digital experiences.',
-    image: '/images/ui-ux.jpg',
+    image: '/images/ui-ux-service.png',
     icon: '🎨'
   },
   {
     id: 's5',
     title: 'Customer Support',
     description: 'Ongoing technical maintenance, performance audits, and round-the-clock support to ensure your products never sleep.',
-    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800',
+    image: '/images/customer-support-service.png',
     icon: '🎧'
   }
 ];
@@ -228,54 +228,37 @@ export const STEPS: Step[] = [
   {
     id: 'p1',
     number: '01',
-    title: 'Discovery Call',
-    description: 'Understand your problem & goals to align our vision.',
-    icon: (
-      <Icon3D color="#4ade80">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M4 4l8 6 8-6" fill="white" fillOpacity="0.1" />
-      </Icon3D>
-    ),
+    title: 'Request',
+    description: 'Submit your request',
+    icon: '📧'
   },
   {
     id: 'p2',
     number: '02',
-    title: 'System Design',
-    description: 'Define the best technical & business solution for scale.',
-    icon: (
-      <Icon3D color="#4ade80">
-        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <rect x="9" y="3" width="6" height="4" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M9 12h6M9 16h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </Icon3D>
-    ),
+    title: 'Estimate',
+    description: 'Get an estimate asap',
+    icon: '📋'
   },
   {
     id: 'p3',
     number: '03',
-    title: 'Build & Iterate',
-    description: 'Agile development with clear milestones and feedback.',
-    icon: (
-      <Icon3D color="#4ade80">
-        <path d="M7 8l-4 4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M17 8l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14 4l-4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </Icon3D>
-    ),
+    title: 'Design',
+    description: 'Send Figma/XD file, or we can design it for you',
+    icon: '🎨'
   },
   {
     id: 'p4',
     number: '04',
-    title: 'Launch & Support',
-    description: 'Deployment, optimization, and scaling your success.',
-    icon: (
-      <Icon3D color="#4ade80">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </Icon3D>
-    ),
+    title: 'Develop',
+    description: "We'll start Development of the project",
+    icon: '💻'
+  },
+  {
+    id: 'p5',
+    number: '05',
+    title: 'Deliver',
+    description: 'Pay remainder only when 100%',
+    icon: '🚀'
   },
 ];
 

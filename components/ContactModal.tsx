@@ -18,91 +18,88 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-[3000] flex items-center justify-center px-6">
+    <div className="fixed inset-0 z-[3000] flex items-center justify-center px-4 sm:px-6">
       {/* Premium Backdrop with high-end blur */}
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-[12px] animate-in fade-in duration-700 ease-out"
+        className="absolute inset-0 bg-black/90 backdrop-blur-[12px] animate-in fade-in duration-500"
         onClick={onClose}
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-3xl bg-[#0a0a0a] border border-white/10 rounded-[3.5rem] p-1 md:p-12 shadow-[0_0_120px_rgba(0,0,0,1)] animate-in zoom-in-95 fade-in slide-in-from-bottom-12 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-[#0a0a0a] border border-white/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 shadow-[0_0_100px_rgba(0,0,0,1)] animate-in zoom-in-95 fade-in slide-in-from-bottom-10 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
 
         {/* Subtle Inner Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-[#f5ba41]/40 to-transparent blur-sm"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-[#f5ba41]/30 to-transparent"></div>
 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-8 right-8 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-zinc-500 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all duration-300"
+          className="absolute top-4 right-4 md:top-8 md:right-8 z-20 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-zinc-500 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all duration-300"
         >
-          <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
 
-        <div className="relative p-8 md:p-4">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f5ba41] animate-pulse"></span>
-              <p className="text-[#f5ba41] font-black text-[9px] uppercase tracking-[0.4em]">Let's build your vision</p>
+        <div className="relative">
+          <div className="text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-4 md:mb-6">
+              <span className="w-1 h-1 rounded-full bg-[#f5ba41] animate-pulse"></span>
+              <p className="text-[#f5ba41] font-bold text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-inter">Let's build your vision</p>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-white font-lexend tracking-tighter leading-none">Choose your path</h2>
-            <p className="mt-4 text-zinc-500 font-medium text-sm md:text-base">Ready to start? Select how you'd like to connect with us.</p>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-white font-lexend tracking-tighter leading-none">Choose your path</h2>
+            <p className="mt-3 text-zinc-500 font-medium text-xs md:text-sm max-w-md mx-auto leading-relaxed">Ready to start? Select how you'd like to connect with us.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Option 1: Form - Styled for Stagger Entry */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {/* Option 1: Form */}
             <button
               onClick={handleSendMessage}
-              className="group relative flex flex-col items-start bg-zinc-900/30 border border-white/5 p-10 rounded-[2.5rem] text-left transition-all duration-500 hover:bg-zinc-900/60 hover:border-[#4ade80]/40 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(74,222,128,0.15)] animate-in slide-in-from-bottom-8 fade-in delay-200"
+              className="group relative flex flex-col items-center md:items-start bg-zinc-900/40 border border-white/5 p-6 md:p-8 lg:p-10 rounded-[1.5rem] md:rounded-[2rem] text-center md:text-left transition-all duration-300 hover:bg-zinc-900/60 hover:border-[#4ade80]/30 hover:-translate-y-1"
             >
-              {/* Animated Icon Box */}
-              <div className="w-20 h-20 rounded-3xl bg-[#4ade80]/10 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-[#4ade80]/20">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#4ade80]">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#4ade80]/10 flex items-center justify-center mb-6 transition-all duration-500 border border-[#4ade80]/20 group-hover:scale-110">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#4ade80] md:w-8 md:h-8">
                   <path d="M7 8L3 12L7 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M17 8L21 12L17 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M14 4L10 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
 
-              <h3 className="text-2xl font-black text-white font-lexend mb-4 group-hover:text-[#4ade80] transition-colors">Project Request</h3>
-              <p className="text-zinc-500 font-medium leading-relaxed text-sm">
+              <h3 className="text-lg md:text-xl font-bold text-white font-lexend mb-2 group-hover:text-[#4ade80] transition-colors">Project Request</h3>
+              <p className="text-zinc-500 font-medium leading-normal text-[11px] md:text-xs">
                 Fill out our request form. Perfect for detailed project specs and brief inquiries.
               </p>
 
-              <div className="mt-10 flex items-center text-[#4ade80] font-black text-[10px] uppercase tracking-[0.3em]">
-                <span className="border-b-2 border-[#4ade80]/0 group-hover:border-[#4ade80] transition-all pb-1">Start Request</span>
-                <svg className="ml-3 w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+              <div className="mt-6 w-full flex items-center justify-center md:justify-start text-[#4ade80] font-bold text-[9px] uppercase tracking-[0.2em] opacity-80 group-hover:opacity-100 transition-opacity">
+                <span className="border-b border-[#4ade80]/0 group-hover:border-[#4ade80] transition-all pb-0.5">Start Request</span>
+                <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </button>
 
-            {/* Option 2: Booking - Styled for Stagger Entry */}
+            {/* Option 2: Booking */}
             <a
-              //is jaga apny apna calendly ki Api lgani hein..
               href="https://calendly.com/engineersbwc/30min"
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="group relative flex flex-col items-start bg-zinc-900/30 border border-white/5 p-10 rounded-[2.5rem] text-left transition-all duration-500 hover:bg-zinc-900/60 hover:border-[#f5ba41]/40 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(245,186,65,0.15)] animate-in slide-in-from-bottom-8 fade-in delay-300"
+              className="group relative flex flex-col items-center md:items-start bg-zinc-900/40 border border-white/5 p-6 md:p-8 lg:p-10 rounded-[1.5rem] md:rounded-[2rem] text-center md:text-left transition-all duration-300 hover:bg-zinc-900/60 hover:border-[#f5ba41]/30 hover:-translate-y-1"
             >
-              {/* Animated Icon Box */}
-              <div className="w-20 h-20 rounded-3xl bg-[#f5ba41]/10 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 border border-[#f5ba41]/20">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#f5ba41]">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#f5ba41]/10 flex items-center justify-center mb-6 transition-all duration-500 border border-[#f5ba41]/20 group-hover:scale-110">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#f5ba41] md:w-8 md:h-8">
                   <path d="M8 7V3M16 7V3M3 11H21M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 7H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
 
-              <h3 className="text-2xl font-black text-white font-lexend mb-4 group-hover:text-[#f5ba41] transition-colors">Book a Strategy Call</h3>
-              <p className="text-zinc-500 font-medium leading-relaxed text-sm">
+              <h3 className="text-lg md:text-xl font-bold text-white font-lexend mb-2 group-hover:text-[#f5ba41] transition-colors">Book a Strategy Call</h3>
+              <p className="text-zinc-500 font-medium leading-normal text-[11px] md:text-xs">
                 Discuss your goals live. Pick a time that fits your schedule for a quick 15-min discovery.
               </p>
 
-              <div className="mt-10 flex items-center text-[#f5ba41] font-black text-[10px] uppercase tracking-[0.3em]">
-                <span className="border-b-2 border-[#f5ba41]/0 group-hover:border-[#f5ba41] transition-all pb-1">Check Slots</span>
-                <svg className="ml-3 w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+              <div className="mt-6 w-full flex items-center justify-center md:justify-start text-[#f5ba41] font-bold text-[9px] uppercase tracking-[0.2em] opacity-80 group-hover:opacity-100 transition-opacity">
+                <span className="border-b border-[#f5ba41]/0 group-hover:border-[#f5ba41] transition-all pb-0.5">Check Slots</span>
+                <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
