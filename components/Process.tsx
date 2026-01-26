@@ -67,7 +67,7 @@ export const Process: React.FC = () => {
                 className="w-full"
               >
                 <div className="
-                  h-full bg-[#3a3a3a] border border-white/5 rounded-xl p-4 flex flex-row md:flex-col items-center md:items-start gap-4
+                  h-full md:min-h-[280px] bg-[#3a3a3a] border border-white/5 rounded-xl p-4 flex flex-row md:flex-col items-center md:items-start gap-4
                   hover:border-zinc-500 transition-colors duration-300
                 ">
                   {/* Image Container */}
