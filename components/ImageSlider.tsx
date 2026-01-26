@@ -31,7 +31,6 @@ export const ImageSlider: React.FC = () => {
               {slide.type === 'video' ? (
                 <video
                   src={slide.url}
-                  poster={slide.poster}
                   autoPlay
                   muted
                   loop

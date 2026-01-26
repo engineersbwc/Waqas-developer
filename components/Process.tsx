@@ -60,18 +60,18 @@ export const Process: React.FC = () => {
         {/* Process Carousel Container */}
         <div className="relative">
           {/* Main Grid/Flex Container */}
-          <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+          <div className="flex flex-col space-y-4 md:space-y-0 md:grid md:grid-cols-5 max-w-7xl mx-auto md:gap-4 lg:gap-6">
             {STEPS.map((step) => (
               <div
                 key={step.id}
                 className="w-full"
               >
                 <div className="
-                  bg-[#3a3a3a] border border-white/5 rounded-xl p-4 flex flex-row items-center gap-4
+                  h-full bg-[#3a3a3a] border border-white/5 rounded-xl p-4 flex flex-row md:flex-col items-center md:items-start gap-4
                   hover:border-zinc-500 transition-colors duration-300
                 ">
                   {/* Image Container */}
-                  <div className="w-16 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-zinc-900/50">
+                  <div className="w-16 h-16 md:w-full md:aspect-square flex-shrink-0 overflow-hidden rounded-lg bg-zinc-900/50">
                     <img
                       src={step.image}
                       alt={step.title}
