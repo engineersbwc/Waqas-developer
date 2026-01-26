@@ -3,6 +3,7 @@ import React from 'react';
 
 export const ContactCTA: React.FC = () => {
   const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [budget, setBudget] = React.useState(1000);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -92,6 +93,28 @@ export const ContactCTA: React.FC = () => {
                   </div>
                   <input type="text" name="company" placeholder="Company (Optional)" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#f5ba41] transition-all" />
                   <textarea name="description" required rows={3} placeholder="How can we help?" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white text-sm outline-none focus:border-[#f5ba41] transition-all resize-none"></textarea>
+
+                  {/* Budget Slider */}
+                  <div className="space-y-4 pt-2">
+                    <label className="flex items-center justify-between text-sm font-bold text-zinc-400">
+                      <span>Project Budget</span>
+                      <span className="text-[#f5ba41]">${budget}</span>
+                    </label>
+                    <input
+                      type="range"
+                      min="500"
+                      max="3000"
+                      step="100"
+                      value={budget}
+                      onChange={(e) => setBudget(Number(e.target.value))}
+                      className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#f5ba41]"
+                    />
+                    <input type="hidden" name="budget" value={budget} />
+                    <div className="flex justify-between text-[10px] text-zinc-600 font-bold uppercase tracking-widest">
+                      <span>$500</span>
+                      <span>$3000+</span>
+                    </div>
+                  </div>
 
                   {status === 'error' && (
                     <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">

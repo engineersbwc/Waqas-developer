@@ -13,19 +13,61 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'p1',
-    title: 'AI Analysis System',
-    description: 'Green mobility for professionals website featuring an e-bike.',
-    image: '/images/ai-analysis-v2.jpg',
-    tag: 'WEBSITE',
-    link: '#'
+    title: 'Skip',
+    description: 'A revolutionary fintech app simplification for seamless payments.',
+    image: '/images/skip/cover.png',
+    tag: 'UX/UI',
+    link: '#',
+    gallery: [
+      '/public/images/project/ux-ui-skip/1.png',
+      '/public/images/project/ux-ui-skip/2.png',
+      '/public/images/project/ux-ui-skip/3.png',
+      '/public/images/project/ux-ui-skip/4.png'
+    ],
+    client: 'Skip',
+    timeline: '2023',
+    category: 'Fintech',
+    services: ['UX/UI Design', 'App Redesign', 'User Research'],
+    technologies: ['Figma', 'Protopie', 'React Native'],
+    vision: 'Skip aims to remove friction from digital payments. The goal was to create an interface that feels invisible, allowing users to focus on the transaction rather than the tool.',
+    problemStatement: 'Previous iterations were cluttered and confusing. Users found it hard to navigate basic payment flows.',
+    solution: 'We stripped away the noise, focusing on a minimal, gesture-based interface. Large, clear actions and subtle haptics guide the user confidently.',
+    features: ['Gesture-based Navigation', 'Dark Mode Default', 'Biometric Quick-Pay'],
+    outcomes: ['40% Faster Checkout', 'Award-Winning Design'],
+    targetUsers: ['Digital Natives', 'Small Business Owners'],
+    futureEnhancements: ['Voice Payments', 'Smart Watch Integration']
   },
   {
     id: 'p2',
-    title: 'Object Detect',
-    description: 'Everything you need to become a more profitable designer.',
+    title: 'Revamping Joe & The Juice’s Mobile Experience',
+    description: 'A complete redesign of the mobile experience for the global coffee and juice bar chain.',
     image: '/images/object-detect-v2.jpg',
     tag: 'MOBILE APP',
-    link: '#'
+    client: 'Joe & The Juice',
+    timeline: '2021',
+    category: 'Retail & F&B',
+    services: ['Mobile App Redesign', 'UX/UI Strategy', '3D Illustrations'],
+    technologies: ['Flutter', 'Firebase', 'Node.js'],
+    link: '#',
+    vision: 'Joe & The Juice is a global lifestyle brand. Our goal was to translate their unique in-store vibe into a digital experience that feels just as energetic, seamless, and premium.',
+    problemStatement: 'The legacy app was outdated, suffering from complex navigation, slow purchase flows, and a disconnect from the brand’s vibrant physical identity. Users struggled with loyalty redemption and ordering efficiency.',
+    solution: 'We engineered a complete UI/UX overhaul focusing on speed and immersion. We introduced seamless "One-Tap Reorder", integrated 3D interactive elements for product visualization, and simplified the loyalty rewards system to drive engagement.',
+    process: [
+      { phase: 'Discovery & Prototyping', description: 'Analyzed user behavior data to identify friction points. Created low-fidelity wireframes to test new navigation structures.' },
+      { phase: 'Visual Design & 3D', description: 'Developed a high-energy visual language using the brand\'s signature pink and black palette, enhanced with custom 3D juice renders.' },
+      { phase: 'Development & Testing', description: 'Built the app using Flutter for cross-platform consistency. Rigorous A/B testing ensured the new flows significantly reduced time-to-order.' },
+      { phase: 'Feature Expansion', description: 'Rolled out advanced features like "Order Ahead" and geo-fenced notifications for pickup readiness.' }
+    ],
+    features: ['Seamless Purchase Flow', '3D Product Visualization', 'One-Tap Reorder', 'Loyalty Integration', 'Live Order Tracking'],
+    outcomes: ['5X Higher Engagement', '98% Customer Satisfaction', '100% Eco-Friendly Packaging'],
+    targetUsers: ['Daily Commuters', 'Health Enthusiasts', 'Gen Z & Millennials'],
+    futureEnhancements: ['Subscription Model', 'AR Menu Experience', 'Social Gifting'],
+    faq: [
+      { question: 'How long did the redesign take?', answer: 'The entire project, from discovery to launch, was completed in 6 months.' },
+      { question: 'Did you build for both iOS and Android?', answer: 'Yes, we used Flutter to ensure a flawless native experience on both platforms simultaneously.' },
+      { question: 'What was the biggest challenge?', answer: 'Balancing the high-fidelity 3D visuals with app performance to ensure instant load times on all devices.' },
+      { question: 'How did you measure success?', answer: 'We tracked conversion rates, app store ratings, and daily active user (DAU) retention, all of which saw significant growth.' }
+    ]
   },
   {
     id: 'p3',

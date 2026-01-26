@@ -30,7 +30,7 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
               >
                 <div className={`
                   group h-full flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] p-6 md:p-8 
-                  relative overflow-hidden ${!isTopRow ? 'md:min-h-[450px]' : ''}
+                  relative overflow-hidden ${!isTopRow ? 'md:min-h-[520px]' : ''}
                 `}>
 
                   {/* Grainy Texture Overlay */}

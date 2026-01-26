@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-4 md:py-6 transition-all duration-300 ${scrolled ? 'bg-[#1a1a1a]/80 backdrop-blur-md py-4 shadow-lg' : 'bg-[#1a1a1a]/40 backdrop-blur-sm md:bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-[9999] flex items-center justify-between px-6 md:px-12 py-4 md:py-6 transition-all duration-300 ${scrolled ? 'bg-[#1a1a1a]/95 backdrop-blur-md py-4 shadow-lg border-b border-white/5' : 'bg-[#1a1a1a]/95 backdrop-blur-md md:bg-transparent'
           }`}
       >
         {/* Logo Left */}
@@ -63,9 +63,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
         <div className="hidden md:block">
           <button
             onClick={onContactClick}
-            className="flex items-center space-x-2 bg-[#1a1a1a] hover:bg-[#222] border border-white/10 text-white px-5 py-3 rounded-xl transition-all font-medium text-sm"
+            className="flex items-center space-x-2 bg-[#1a1a1a] border border-white/10 text-white px-5 py-3 rounded-xl transition-all font-medium text-sm hover:bg-[#252525]"
           >
-            <span className="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse"></span>
             <span>Book a Call</span>
           </button>
         </div>

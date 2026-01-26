@@ -59,6 +59,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
           </div>
         </Reveal>
 
+        {project.gallery && project.gallery.length > 0 && (
+          <Reveal className="mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {project.gallery.map((img, idx) => (
+                <div key={idx} className="w-full aspect-video rounded-[2rem] overflow-hidden border border-zinc-100 shadow-sm first:md:col-span-2 first:aspect-[21/9]">
+                  <img src={img} className="w-full h-full object-cover" alt={`Gallery ${idx + 1}`} />
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           <div className="lg:col-span-8 space-y-24">
             {/* Overview / Vision */}
@@ -87,13 +99,29 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
               </div>
             )}
 
+            {/* Process Timeline */}
+            {project.process && (
+              <section className="mb-20">
+                <h2 className="text-3xl md:text-5xl font-black text-zinc-900 font-lexend tracking-tighter mb-12">Process Timeline</h2>
+                <div className="space-y-8 relative pl-8 border-l-2 border-zinc-100">
+                  {project.process.map((step, idx) => (
+                    <div key={idx} className="relative">
+                      <div className="absolute top-2 -left-[37px] w-4 h-4 rounded-full bg-zinc-900 border-4 border-white shadow-sm" />
+                      <h3 className="text-xl font-bold text-zinc-900 mb-2">{step.phase}</h3>
+                      <p className="text-zinc-500 leading-relaxed font-medium">{step.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Features List */}
             {project.features && (
               <section>
                 <h2 className="text-3xl md:text-5xl font-black text-zinc-900 font-lexend tracking-tighter mb-12">Key Features</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {project.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-4 p-6 rounded-3xl bg-zinc-50 border border-zinc-100">
+                    <div key={idx} className="flex items-center space-x-4 p-6 rounded-3xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
                       <div className="w-2 h-2 rounded-full bg-zinc-900" />
                       <span className="font-bold text-zinc-800">{feature}</span>
                     </div>
@@ -146,6 +174,21 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
                 </section>
               )}
             </div>
+
+            {/* FAQ Section */}
+            {project.faq && (
+              <section className="pt-20 border-t border-zinc-100">
+                <h2 className="text-3xl md:text-5xl font-black text-zinc-900 font-lexend tracking-tighter mb-12">Frequently Asked Questions</h2>
+                <div className="grid grid-cols-1 gap-6">
+                  {project.faq.map((item, idx) => (
+                    <div key={idx} className="p-8 rounded-[2rem] bg-zinc-50 border border-zinc-100 hover:bg-zinc-100 transition-all">
+                      <h3 className="text-lg font-bold text-zinc-900 mb-4">{item.question}</h3>
+                      <p className="text-zinc-500 font-medium leading-relaxed">{item.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           <div className="lg:col-span-4">

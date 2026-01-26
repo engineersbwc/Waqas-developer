@@ -60,40 +60,22 @@ export const Process: React.FC = () => {
         {/* Process Carousel Container */}
         <div className="relative">
           {/* Main Grid/Flex Container */}
-          <div
-            ref={scrollRef}
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-            className={`
-              flex md:grid md:grid-cols-5 gap-4 md:gap-6 
-              ${isMobile ? 'overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8' : 'overflow-hidden'}
-              cursor-grab active:cursor-grabbing transition-all duration-500
-            `}
-            style={{
-              scrollBehavior: isDragging ? 'auto' : 'smooth'
-            }}
-          >
+          <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
             {STEPS.map((step) => (
               <div
                 key={step.id}
-                className="w-[calc(100vw-3rem)] md:w-full flex-shrink-0 snap-center"
+                className="w-full"
               >
                 <div className="
-                  h-full bg-[#3a3a3a] border border-white/5 rounded-2xl p-6 flex flex-col items-start
-                  relative overflow-hidden hover:border-zinc-500 transition-colors duration-300
+                  bg-[#3a3a3a] border border-white/5 rounded-xl p-4 flex flex-row items-center gap-4
+                  hover:border-zinc-500 transition-colors duration-300
                 ">
-
-                  {/* Grainy Texture Overlay */}
-                  <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
-
                   {/* Image Container */}
-                  <div className="w-full aspect-square mb-6 overflow-hidden rounded-xl bg-zinc-900/50">
+                  <div className="w-16 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-zinc-900/50">
                     <img
                       src={step.image}
                       alt={step.title}
-                      className="w-full h-full object-cover opacity-90 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-90"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1200';
@@ -101,19 +83,18 @@ export const Process: React.FC = () => {
                     />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-lg md:text-xl font-bold mb-2 font-lexend text-white">
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-xs md:text-sm leading-relaxed font-inter text-zinc-400">
-                    {step.description}
-                  </p>
+                  {/* Text Content */}
+                  <div>
+                    <h3 className="text-base md:text-lg font-bold mb-1 font-lexend text-white">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs leading-relaxed font-inter text-zinc-400">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
-
           </div>
         </div>
       </div>

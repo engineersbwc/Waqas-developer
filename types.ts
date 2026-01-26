@@ -32,6 +32,8 @@ export interface Project {
   outcomes?: string[];
   gallery?: string[];
   url?: string;
+  process?: { phase: string; description: string }[];
+  faq?: { question: string; answer: string }[];
 }
 
 export interface Service {
