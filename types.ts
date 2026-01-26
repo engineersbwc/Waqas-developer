@@ -3,6 +3,8 @@ import React from 'react';
 
 export interface HeroSlide {
   url: string;
+  type?: 'image' | 'video';
+  poster?: string;
   title?: string;
   description?: string;
 }

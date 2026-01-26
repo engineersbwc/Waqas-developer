@@ -18,6 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   }, []);
   const navLinks = [
     { name: 'Home', id: 'home' },
+    { name: 'Services', id: 'services' },
     { name: 'Work', id: 'work' },
     { name: 'About', id: 'about' },
   ];
@@ -34,13 +35,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-4 md:py-6 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4 shadow-lg' : 'bg-black/40 backdrop-blur-sm md:bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-4 md:py-6 transition-all duration-300 ${scrolled ? 'bg-[#1a1a1a]/80 backdrop-blur-md py-4 shadow-lg' : 'bg-[#1a1a1a]/40 backdrop-blur-sm md:bg-transparent'
           }`}
       >
         {/* Logo Left */}
         <div className="flex-shrink-0">
-          <div className="text-2xl font-black font-lexend tracking-tighter text-white">
-            Innovita<br /><span className="text-[10px] tracking-[0.2em] font-medium text-zinc-400 block -mt-1">SOFT</span>
+          <div className="text-2xl font-black font-lexend tracking-tighter text-[#F5F5F5] text-center">
+            Innovita<br /><span className="text-[8px] tracking-[0.1em] font-medium text-[#F5F5F5] block text-center -mt-2">SOFT</span>
           </div>
         </div>
 
@@ -73,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-[90] bg-black pt-24 px-6 md:hidden">
+        <div className="fixed inset-0 z-[90] bg-[#1a1a1a] pt-24 px-6 md:hidden">
           <div className="flex flex-col space-y-6">
             {navLinks.map((link) => (
               <a

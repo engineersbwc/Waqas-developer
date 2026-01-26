@@ -45,7 +45,7 @@ export const Process: React.FC = () => {
   // Automated flow removed as per request
 
   return (
-    <section id="process" className="py-12 md:py-20 px-6 bg-black overflow-hidden relative">
+    <section id="process" className="py-12 md:py-20 px-6 bg-[#1a1a1a] overflow-hidden relative">
       <div className="max-w-7xl mx-auto">
 
         {/* Centered Heading */}
@@ -81,7 +81,7 @@ export const Process: React.FC = () => {
                 className="w-[calc(100vw-3rem)] md:w-full flex-shrink-0 snap-center"
               >
                 <div className="
-                  h-full bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 flex flex-col items-start
+                  h-full bg-[#3a3a3a] border border-white/5 rounded-2xl p-6 flex flex-col items-start
                   relative overflow-hidden hover:border-zinc-500 transition-colors duration-300
                 ">
 

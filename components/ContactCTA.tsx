@@ -32,7 +32,7 @@ export const ContactCTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-black overflow-hidden relative">
+    <section id="contact" className="py-20 px-6 bg-[#1a1a1a] overflow-hidden relative">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-32">
@@ -67,7 +67,7 @@ export const ContactCTA: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="relative bg-[#050505] border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-2xl">
+            <div className="relative bg-[#3a3a3a] border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-2xl">
               {status === 'success' ? (
                 <div className="bg-zinc-900/50 rounded-3xl p-12 text-center border border-[#4ade80]/20">
                   <div className="w-20 h-20 bg-[#4ade80]/10 rounded-full flex items-center justify-center mx-auto mb-6">

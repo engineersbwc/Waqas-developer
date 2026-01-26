@@ -3,19 +3,10 @@ import { Project, Service, Testimonial, FAQItem, Step, HeroSlide, Blog } from '.
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
-    url: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1200',
-  },
-  {
-    url: '/images/showcase-1.jpg',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
-  },
-  {
-    url: '/images/showcase-2.jpg',
-  },
-  {
-    url: '/images/showcase-3.jpg',
+    url: '/videos/WhatsApp Video 2026-01-26 at 12.38.06 PM (1).mp4',
+    type: 'video',
+    poster: '/ai-agents-automation.png',
+    title: 'Showcase Video',
   }
 ];
 
@@ -59,31 +50,31 @@ export const SERVICES: Service[] = [
     id: 's1',
     title: 'Web Design & Development',
     description: 'Showcasing responsive web layouts with high performance.',
-    image: '/images/web-dev-v4.jpg',
+    image: '/web-design-dev.png',
   },
   {
     id: 's2',
     title: 'Mobile App Development',
     description: 'Focused on tailored, high-performance mobile apps.',
-    image: '/images/mobile-app-v4.jpg',
+    image: '/mobile-app-dev.png',
   },
   {
     id: 's3',
     title: 'AI-Agents & Automation',
     description: 'Custom AI solutions for enhanced user experience.',
-    image: '/images/ai-automation.png',
+    image: '/ai-agents-automation.png',
   },
   {
     id: 's4',
     title: 'UI/UX Design',
     description: 'Figma and Adobe XD design services for modern products.',
-    image: '/images/ui-ux-design.png',
+    image: '/ui-ux-design.png',
   },
   {
     id: 's5',
     title: 'Customer Support',
     description: 'Maintenance and app performance updates to keep you running.',
-    image: '/images/customer-support.png',
+    image: '/customer-support.png',
   }
 ];
 

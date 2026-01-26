@@ -46,7 +46,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#000000]">
+    <div className="min-h-screen bg-[#1a1a1a]">
       <ScrollIndicator />
       <Navbar onContactClick={triggerContact} />
 

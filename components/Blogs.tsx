@@ -5,7 +5,7 @@ import { Reveal } from './Reveal';
 
 export const Blogs: React.FC = () => {
   return (
-    <section id="blogs" className="py-24 md:py-32 px-6 bg-black relative overflow-hidden">
+    <section id="blogs" className="py-24 md:py-32 px-6 bg-[#1a1a1a] relative overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
@@ -18,7 +18,7 @@ export const Blogs: React.FC = () => {
         <div className="space-y-6">
           {BLOGS.map((blog) => (
             <Reveal key={blog.id} className="group">
-              <a href="#" className="block p-8 md:p-10 border border-white/5 rounded-[2rem] bg-[#0a0a0a] transition-all duration-500 hover:border-white/20 hover:scale-[1.01] hover:shadow-2xl">
+              <a href="#" className="block p-8 md:p-10 border border-white/5 rounded-[2rem] bg-[#3a3a3a] transition-all duration-500 hover:border-white/20 hover:scale-[1.01] hover:shadow-2xl">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
                   <div className="flex-1">
                     <span className="text-[9px] font-black text-zinc-600 tracking-widest uppercase mb-3 block font-inter">{blog.date}</span>

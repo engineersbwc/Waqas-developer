@@ -26,7 +26,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl bg-[#0a0a0a] border border-white/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 shadow-[0_0_100px_rgba(0,0,0,1)] animate-in zoom-in-95 fade-in slide-in-from-bottom-10 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-[#3a3a3a] border border-white/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 shadow-[0_0_100px_rgba(0,0,0,1)] animate-in zoom-in-95 fade-in slide-in-from-bottom-10 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
 
         {/* Subtle Inner Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-[#f5ba41]/30 to-transparent"></div>

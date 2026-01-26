@@ -5,7 +5,7 @@ import { Reveal } from './Reveal';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-20 md:py-32 px-6 bg-black relative overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-32 px-6 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#f5ba41]/5 rounded-full blur-[160px] pointer-events-none" />
 
@@ -18,7 +18,7 @@ export const Testimonials: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           {TESTIMONIALS.map((testimonial) => (
             <Reveal key={testimonial.id}>
-              <div className="h-full bg-[#0a0a0a] border border-white/5 p-8 md:p-12 rounded-[2.5rem] flex flex-col justify-between transition-all duration-500 hover:border-white/10 hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]">
+              <div className="h-full bg-[#3a3a3a] border border-white/5 p-8 md:p-12 rounded-[2.5rem] flex flex-col justify-between transition-all duration-500 hover:border-white/10 hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]">
                 <div>
                   <div className="flex mb-8">
                     {[...Array(testimonial.rating)].map((_, i) => (

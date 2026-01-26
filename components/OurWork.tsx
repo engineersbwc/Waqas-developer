@@ -108,7 +108,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
   };
 
   return (
-    <section id="work" className="py-6 md:py-10 bg-black relative overflow-hidden">
+    <section id="work" className="py-6 md:py-10 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#f5ba41]/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -136,8 +136,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                 onClick={() => handleClick(project)}
                 className="
                   group relative w-full h-full
-                  bg-gradient-to-br from-white/10 to-white/[0.02] backdrop-blur-xl 
-                  border border-white/10 rounded-[20px] overflow-hidden 
+                  bg-[#3a3a3a] border border-white/10 rounded-[20px] overflow-hidden 
                   cursor-pointer p-5 md:p-6 flex flex-col
                   transition-all duration-300 hover:border-white/20
                 "
@@ -147,12 +146,12 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
 
                 {/* Title and Category Tag */}
                 <div className="flex items-start justify-between gap-3 mt-1">
-                  <h3 className="text-white text-[17px] md:text-xl font-lexend font-bold tracking-tight leading-snug">
+                  <h3 className="text-[#F5F5F5] text-[17px] md:text-xl font-lexend font-bold tracking-tight leading-snug">
                     {project.title}
                   </h3>
                   <div className="flex-shrink-0">
                     <span className="
-                      px-3 py-1 rounded-full border border-white/20 bg-white/5 text-white 
+                      px-3 py-1 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6] text-[#FFFFFF] 
                       text-[9px] font-black tracking-wider uppercase whitespace-nowrap
                     ">
                       {project.tag}
@@ -167,7 +166,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
         </div>
 
         <div className="mt-12 md:mt-20 flex justify-center">
-          <button className="flex items-center space-x-3 group px-10 py-5 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 transition-all duration-500 shadow-xl relative overflow-hidden">
+          <button className="flex items-center space-x-3 group px-10 py-5 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-500 shadow-xl relative overflow-hidden">
             <div className="flex items-center space-x-3 z-10">
               <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_10px_#4ade80]" />
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white">See More Work</span>

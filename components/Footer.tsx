@@ -12,20 +12,20 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-black pt-24 pb-12 px-4 border-t border-white/5">
+    <footer className="bg-[#1a1a1a] pt-24 pb-12 px-4 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
-             <div className="text-3xl font-black font-lexend tracking-tighter text-white mb-6">
+            <div className="text-3xl font-black font-lexend tracking-tighter text-white mb-6">
               Invt<span className="text-[#f5ba41]">.</span>
               <div className="text-[12px] leading-tight text-zinc-500 uppercase tracking-[0.2em]">Soft</div>
             </div>
             <p className="text-zinc-500 text-lg leading-relaxed mb-8 max-w-sm">
               Ready to accelerate your startup? Let's build something extraordinary together.
             </p>
-            
+
             <div className="flex flex-col space-y-4">
-              <button 
+              <button
                 onClick={(e) => handleLinkClick(e, 'contact')}
                 className="group relative bg-[#f5ba41] text-black font-black py-5 px-8 rounded-2xl hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(245,186,65,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] overflow-hidden"
               >
@@ -49,8 +49,8 @@ export const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Company</h4>
             <ul className="space-y-4">
               <li>
-                <a 
-                  href="#home" 
+                <a
+                  href="#home"
                   onClick={(e) => handleLinkClick(e, 'home')}
                   className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight"
                 >
@@ -58,8 +58,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#work" 
+                <a
+                  href="#work"
                   onClick={(e) => handleLinkClick(e, 'work')}
                   className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight"
                 >
@@ -67,8 +67,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#services" 
+                <a
+                  href="#services"
                   onClick={(e) => handleLinkClick(e, 'services')}
                   className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight"
                 >
@@ -76,8 +76,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#about" 
+                <a
+                  href="#about"
                   onClick={(e) => handleLinkClick(e, 'about')}
                   className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight"
                 >

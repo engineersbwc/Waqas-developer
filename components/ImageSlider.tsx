@@ -24,7 +24,7 @@ export const ImageSlider: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-[#0a0a0a]">
+    <div className="relative w-full h-full overflow-hidden bg-[#3a3a3a]">
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === currentIndex;
 
@@ -48,12 +48,23 @@ export const ImageSlider: React.FC = () => {
                 transitionProperty: 'opacity, scale',
               }}
             >
-              <img
-                src={slide.url}
-                alt={`Slide ${index}`}
-                // We use a larger height and object-cover to allow room for vertical translation
-                className="w-full h-[120%] -top-[10%] relative object-cover"
-              />
+              {slide.type === 'video' ? (
+                <video
+                  src={slide.url}
+                  poster={slide.poster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <img
+                  src={slide.url}
+                  alt={slide.title || `Slide ${index}`}
+                  className="w-full h-[120%] -top-[10%] relative object-cover"
+                />
+              )}
             </div>
 
             {/* Dark gradient overlay for better image depth */}
