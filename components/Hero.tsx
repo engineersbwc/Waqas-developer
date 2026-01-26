@@ -17,13 +17,13 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           {/* Left Column: Text Content (appears first on mobile = top) */}
           <div className="lg:col-span-6 flex flex-col items-center lg:items-start space-y-6 lg:mt-0 text-center lg:text-left">
             {/* Main Heading */}
-            <h1 className="text-2xl md:text-3xl lg:text-5xl font-black text-white leading-[1.1] tracking-tighter">
+            <h1 className="text-[30px] font-black text-white leading-[1.1] tracking-tighter">
               We build <span className="text-[#f5ba41]">AI-powered</span> systems that automate business operations
             </h1>
 
             {/* Subheading */}
-            <p className="text-base md:text-lg lg:text-xl font-medium leading-relaxed text-zinc-500">
-              Build & Launch Your Startup 5x Faster
+            <p className="text-zinc-600 text-[0.5px] font-normal leading-relaxed">
+              We’re a team of expert developers, passionate about powering your business with innovative, high-impact technology solutions.
             </p>
 
             {/* Button - hidden on mobile, shown on desktop */}
@@ -35,9 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             </button>
 
             {/* Description - hidden on mobile, shown on desktop */}
-            <p className="hidden lg:block text-zinc-600 text-sm md:text-base font-normal leading-relaxed pt-2">
-              We solve operational and growth problems through technology, delivering complete systems that combine mobile apps, web platforms, and research-backed AI automation.
-            </p>
+
           </div>
 
           {/* Right Column: Showcase (appears second on mobile = middle) */}
@@ -58,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               Book a Call
             </button>
 
-            <p className="text-zinc-600 text-sm font-normal leading-relaxed">
+            <p className="text-zinc-600 text-[12px] font-normal leading-relaxed">
               We solve operational and growth problems through technology, delivering complete systems that combine mobile apps, web platforms, and research-backed AI automation.
             </p>
           </div>

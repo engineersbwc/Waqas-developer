@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Blogs } from './components/Blogs';
 import { OurWork } from './components/OurWork';
 import { Services } from './components/Services';
 import { About } from './components/About';
@@ -54,13 +55,9 @@ const App: React.FC = () => {
           <Hero onContactClick={triggerContact} />
         </Reveal>
 
-        <Reveal>
-          <Services onContactClick={triggerContact} />
-        </Reveal>
+        <Services onContactClick={triggerContact} />
 
-        <Reveal>
-          <OurWork onProjectClick={handleOpenProject} />
-        </Reveal>
+        <OurWork onProjectClick={handleOpenProject} />
 
         <Reveal>
           <About />

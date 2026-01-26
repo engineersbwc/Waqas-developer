@@ -1,12 +1,20 @@
 
 import React from 'react';
 
+export interface HeroSlide {
+  url: string;
+  title?: string;
+  description?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
-  category: string;
+  description: string;
   image: string;
-  tag: 'WEBSITE' | 'Mobile App';
+  tag: 'WEBSITE' | 'UX/UI' | 'MOBILE APP' | 'GAME APP';
+  link?: string;
+  category?: string;
   client?: string;
   services?: string[];
   technologies?: string[];
@@ -33,29 +41,30 @@ export interface Service {
 }
 
 export interface Step {
-  id: string;
+  id: string | number;
   number: string;
   title: string;
   description: string;
   icon: React.ReactNode;
+  image: string;
 }
 
 export interface Testimonial {
   id: string;
   name: string;
-  location: string;
+  role?: string;
+  location?: string;
   content: string;
   rating: number;
   image: string;
 }
 
-export interface FAQ {
+export interface FAQItem {
   id: string;
   question: string;
   answer: string;
 }
 
-// Added Blog interface for the Blogs component
 export interface Blog {
   id: string;
   title: string;
