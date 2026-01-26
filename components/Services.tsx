@@ -45,7 +45,10 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
                       </h3>
 
                       {/* Static Service Image */}
-                      <div className="relative aspect-video w-full rounded-xl overflow-hidden mb-6 border border-white/5 bg-zinc-900/50">
+                      <div className={`
+                        relative w-full rounded-xl overflow-hidden mb-6 border border-white/5 bg-zinc-900/50
+                        ${!isTopRow ? 'aspect-[4/3] md:aspect-square' : 'aspect-video'}
+                      `}>
                         <img
                           src={service.image}
                           alt={service.title}
