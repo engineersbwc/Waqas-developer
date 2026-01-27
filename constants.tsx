@@ -12,6 +12,30 @@ export const HERO_SLIDES: HeroSlide[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 'skip',
+    title: 'Skip — Food Delivery App',
+    description: 'Complete UX/UI design for Canada\'s leading food delivery app. Features include restaurant browsing, real-time order tracking, address management with interactive maps, and seamless checkout experience.',
+    image: '/images/skip/cover.png',
+    tag: 'SKIP',
+    link: '#',
+    gallery: [
+      '/images/skip/1.png',
+      '/images/skip/2.png',
+      '/images/skip/3.png',
+      '/images/skip/4.png'
+    ],
+    client: 'Skip',
+    category: 'UX/UI Design',
+    technologies: ['Figma', 'React Native', 'Google Maps API'],
+    features: [
+      'Restaurant browsing',
+      'Real-time order tracking',
+      'Interactive address selection',
+      'Promo codes & discounts',
+      'Order history & reordering'
+    ],
+  },
+  {
     id: 'p1',
     title: 'Green mobility for professionals',
     description: 'Yoda is an e-mobylette that weighs 28 kilos and goes up to 45 km/h with a range of 80 km. From €149/month, we register, insure, provide and maintain your fleet.',
@@ -62,14 +86,6 @@ export const PROJECTS: Project[] = [
     description: 'A social media and marketplace app for items.',
     image: '/images/ux-ui-studio.jpg',
     tag: 'UX/UI',
-    link: '#'
-  },
-  {
-    id: 'p4',
-    title: 'Game – Would You Rather Squad',
-    description: 'A dedicated mobile app gaming project.',
-    image: '/images/would-you-rather.jpg',
-    tag: 'GAME APP',
     link: '#'
   }
 ];
