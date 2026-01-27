@@ -42,7 +42,7 @@ const ProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative aspect-[16/10] overflow-hidden mb-4 rounded-xl border border-white/5 bg-zinc-900/50 perspective-1000"
+      className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden mb-4 rounded-xl border border-white/5 bg-zinc-900/50 perspective-1000"
       style={{ perspective: '800px' }}
     >
       <div
@@ -137,7 +137,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                 className="
                   group relative w-full h-full
                   bg-[#3a3a3a] border border-white/10 rounded-[20px] overflow-hidden 
-                  cursor-pointer p-5 md:p-6 flex flex-col
+                  cursor-pointer p-5 md:p-5 flex flex-col
                   transition-all duration-300 hover:border-white/20
                 "
               >

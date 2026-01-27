@@ -39,7 +39,7 @@ const App: React.FC = () => {
   // Render Project Detail View if a project is selected
   if (activeProject) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#121212]">
         <ProjectDetail project={activeProject} onBack={handleCloseProject} />
       </div>
     );
