@@ -13,10 +13,10 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'skip',
-    title: 'Skip — Food Delivery App',
-    description: 'Complete UX/UI design for Canada\'s leading food delivery app. Features include restaurant browsing, real-time order tracking, address management with interactive maps, and seamless checkout experience.',
+    title: 'Wudo — Exotic Minimal Furniture',
+    description: 'A premium e-commerce experience for exotic minimal furniture. Features include high-end product visualization, seamless checkout, and a minimalist design aesthetic that highlights craftsmanship.',
     image: '/images/skip/furniture-ui-v2.jpg',
-    tag: 'SKIP',
+    tag: 'WUDO',
     link: '#',
     gallery: [
       '/images/skip/1.png',
@@ -24,15 +24,15 @@ export const PROJECTS: Project[] = [
       '/images/skip/3.png',
       '/images/skip/4.png'
     ],
-    client: 'Skip',
-    category: 'UX/UI Design',
-    technologies: ['Figma', 'React Native', 'Google Maps API'],
+    client: 'Wudo',
+    category: 'E-commerce Design',
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
     features: [
-      'Restaurant browsing',
-      'Real-time order tracking',
-      'Interactive address selection',
-      'Promo codes & discounts',
-      'Order history & reordering'
+      'High-end Product Visualization',
+      'Minimalist Shopping Experience',
+      'Exclusive Collection Browsing',
+      'Secure Checkout Flow',
+      'Craftsmanship Showcase'
     ],
   },
   {

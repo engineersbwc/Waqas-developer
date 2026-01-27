@@ -174,15 +174,20 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
           <div className="w-20 h-1.5 bg-[#4ade80] mx-auto rounded-full" />
         </div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-0">
+        {/* Project Cards Grid - Responsive Layout */}
+        <div className="
+          flex flex-nowrap overflow-x-auto overflow-y-hidden gap-6 pb-8 px-4 -mx-4 
+          md:grid md:grid-cols-2 md:gap-y-12 md:gap-x-0 md:px-0 md:mx-0 md:overflow-visible
+          snap-x snap-mandatory scrollbar-hide
+        ">
           {PROJECTS.map((project, index) => (
             <div
               key={project.id}
               className={`
-                group relative flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden cursor-pointer 
+                group relative flex-none flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden cursor-pointer 
                 transition-all duration-500 hover:border-white/20 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]
-                w-[90%] md:w-[92%] max-w-[580px]
+                w-[85vw] md:w-[92%] max-w-[580px]
+                snap-center
                 ${index % 2 === 0 ? 'md:ml-auto md:mr-4' : 'md:mr-auto md:ml-4'}
               `}
               onClick={() => onProjectClick(project)}
