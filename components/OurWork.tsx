@@ -192,29 +192,29 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                 <div
                   onClick={() => handleClick(project)}
                   className="
-                    group relative w-full h-[550px] md:h-[600px]
-                    bg-white rounded-[2.5rem] overflow-hidden 
+                    group relative w-full h-[450px] md:h-[500px]
+                    bg-[#F2F2F2] rounded-[2.5rem] overflow-hidden 
                     cursor-pointer flex flex-col
-                    transition-all duration-700 hover:-translate-y-2 shadow-2xl
+                    transition-all duration-700 hover:-translate-y-2 shadow-xl border border-black/5
                   "
                 >
-                  {/* Top 80%: Light Gray Background */}
-                  <div className="h-[80%] bg-[#F2F2F2] p-8 md:p-12 relative flex flex-col items-center text-center">
+                  {/* Top 75%: Light Gray Background */}
+                  <div className="h-[75%] p-6 md:p-8 relative flex flex-col items-center text-center">
 
                     {/* Headline with Pill */}
-                    <div className="space-y-4 mb-2">
-                      <h3 className="text-2xl md:text-3xl font-lexend font-black tracking-tight text-black leading-tight flex flex-col items-center gap-2">
-                        <span className="bg-[#4ade80] text-black px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest inline-block">Green</span>
+                    <div className="space-y-3 mb-1">
+                      <h3 className="text-xl md:text-2xl font-lexend font-black tracking-tight text-black leading-tight flex flex-col items-center gap-1.5">
+                        <span className="bg-[#4ade80] text-black px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest inline-block">Green</span>
                         <span>mobility for professionals</span>
                       </h3>
                     </div>
 
                     {/* Body Text: Product Specs */}
-                    <div className="text-[#8E8E93] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed max-w-[200px] md:max-w-[250px] mt-2">
+                    <div className="text-[#8E8E93] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[200px] mt-1.5">
                       {project.features?.join(' • ')}
                     </div>
 
-                    <p className="text-[#8E8E93] text-[10px] lowercase leading-relaxed mt-4 max-w-[280px] font-medium opacity-80">
+                    <p className="text-[#8E8E93] text-[9px] lowercase leading-relaxed mt-2.5 max-w-[220px] font-medium opacity-80">
                       {project.description}
                     </p>
 
@@ -222,13 +222,13 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                     <YodaProjectImage image={project.image} title={project.title} />
                   </div>
 
-                  {/* Bottom 20%: Dark Charcoal Footer */}
-                  <div className="h-[20%] bg-[#121212] px-8 md:px-12 flex items-center justify-between relative z-10 border-t border-white/5">
+                  {/* Bottom 25%: Slightly Darker Grey Footer */}
+                  <div className="h-[25%] bg-[#EBEBEB] px-8 flex items-center justify-between relative z-10 border-t border-black/5">
                     <div className="flex flex-col">
-                      <span className="font-serif text-2xl md:text-3xl italic text-white tracking-tighter opacity-90">{project.tag}</span>
+                      <span className="font-serif text-xl md:text-2xl italic text-black/80 tracking-tighter">{project.tag}</span>
                     </div>
 
-                    <button className="px-6 py-2.5 rounded-xl border border-white/20 text-white text-[10px] font-black tracking-[0.2em] uppercase transition-all hover:bg-white hover:text-black hover:border-white">
+                    <button className="px-5 py-2 rounded-lg border border-black/10 text-black/60 text-[9px] font-black tracking-[0.2em] uppercase transition-all hover:bg-black hover:text-white hover:border-black">
                       WEBSITE
                     </button>
                   </div>
