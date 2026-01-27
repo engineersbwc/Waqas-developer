@@ -113,89 +113,84 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#4ade80]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 lg:items-start lg:gap-24">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-5xl font-black text-white font-lexend tracking-tighter uppercase leading-none mb-6">
+            Our Work
+          </h2>
+          <div className="w-20 h-1.5 bg-[#4ade80] mx-auto rounded-full" />
+        </div>
 
-          {/* Left Side: Get in Touch CTA */}
-          <div className="lg:w-[350px] space-y-10 lg:sticky lg:top-40">
-            <div className="space-y-6">
-              <h2 className="text-5xl md:text-6xl font-black text-white font-lexend tracking-tighter uppercase leading-[0.9]">
-                Our<br />Work
-              </h2>
-              <div className="w-20 h-1.5 bg-[#4ade80] rounded-full" />
-            </div>
-
-            <p className="text-zinc-500 text-lg font-bold uppercase tracking-widest leading-relaxed">
-              Crafting premium<br />digital experiences<br />across all platforms.
-            </p>
-
-            <button className="group relative inline-flex items-center space-x-5 bg-white text-black px-10 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:bg-[#4ade80] transition-all duration-500 shadow-2xl">
-              <span className="relative z-10">Get in touch</span>
-              <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-black/10 transition-colors">
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                  <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </button>
-          </div>
-
-          {/* Right Side: Project Cards Grid */}
-          <div className="flex-1 w-full">
-            <div
-              ref={scrollRef}
-              onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
-              className={`
+        {/* Right Side: Project Cards Grid */}
+        <div className="flex-1 w-full">
+          <div
+            ref={scrollRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className={`
                 flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 pb-12
                 md:grid md:grid-cols-2 lg:gap-8 md:overflow-x-hidden md:pb-0 md:mx-0 md:px-0
                 ${isDragging ? 'cursor-grabbing select-none snap-none' : 'cursor-default'}
               `}
-            >
-              {PROJECTS.map((project) => (
-                <div key={project.id} className="w-[85vw] md:w-full h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
-                  <div
-                    onClick={() => handleClick(project)}
-                    className="
+          >
+            {PROJECTS.map((project) => (
+              <div key={project.id} className="w-[85vw] md:w-full h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
+                <div
+                  onClick={() => handleClick(project)}
+                  className="
                       group relative w-full h-full
-                      bg-[#1e1e1e] border border-white/5 rounded-[2.5rem] overflow-hidden 
+                      bg-[#3a3a3a] border border-white/10 rounded-[2.5rem] overflow-hidden 
                       cursor-pointer p-6 md:p-8 flex flex-col
-                      transition-all duration-500 hover:border-white/10 hover:-translate-y-2
+                      transition-all duration-500 hover:border-white/20 hover:-translate-y-2
                     "
-                  >
-                    {/* 3D Interactive Image */}
-                    <ProjectImage image={project.image} title={project.title} />
+                >
+                  {/* 3D Interactive Image */}
+                  <ProjectImage image={project.image} title={project.title} />
 
-                    <div className="mt-8 flex items-start justify-between">
-                      <div className="space-y-2">
-                        <h3 className="text-white text-xl md:text-2xl font-lexend font-black tracking-tight leading-tight">
-                          {project.title}
-                        </h3>
-                        <p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em]">{project.tag}</p>
-                      </div>
-                      <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center group-hover:bg-[#4ade80] transition-all">
-                        <svg className="w-4 h-4 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                          <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                      </div>
+                  <div className="mt-8 flex items-start justify-between mb-8">
+                    <div className="space-y-2">
+                      <h3 className="text-white text-xl md:text-2xl font-lexend font-black tracking-tight leading-tight">
+                        {project.title}
+                      </h3>
+                      <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em]">{project.tag}</p>
+                    </div>
+                    <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center group-hover:bg-[#4ade80] transition-all shrink-0">
+                      <svg className="w-4 h-4 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
 
-            {/* See More Work Button */}
-            <div className="mt-16 md:mt-24 flex justify-center">
-              <button className="flex items-center space-x-4 group px-12 py-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-700 shadow-xl relative overflow-hidden group">
-                <div className="flex items-center space-x-4 z-10">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_15px_#4ade80]" />
-                  <span className="text-[11px] font-black uppercase tracking-[0.4em] text-white">See More Work</span>
+                  {/* Card Button */}
+                  <div className="mt-auto">
+                    <button
+                      className="
+                            px-8 py-3 rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] text-[#E5E5E5] 
+                            text-[10px] font-black tracking-[0.2em] uppercase transition-all 
+                            hover:bg-[#2A2A2A] hover:border-[#3a3a3a] active:bg-[#1a1a1a] active:border-[#2a2a2a]
+                            w-full md:w-auto
+                          "
+                    >
+                      Get In Touch
+                    </button>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 h-[2px] w-full bg-[#4ade80]/10">
-                  <div className="h-full bg-[#4ade80] animate-[loading_3s_infinite] w-1/4 opacity-50" />
-                </div>
-              </button>
-            </div>
+              </div>
+            ))}
+          </div>
+
+          {/* See More Work Button */}
+          <div className="mt-16 md:mt-24 flex justify-center">
+            <button className="flex items-center space-x-4 group px-12 py-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-700 shadow-xl relative overflow-hidden group">
+              <div className="flex items-center space-x-4 z-10">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_15px_#4ade80]" />
+                <span className="text-[11px] font-black uppercase tracking-[0.4em] text-white">See More Work</span>
+              </div>
+              <div className="absolute bottom-0 left-0 h-[2px] w-full bg-[#4ade80]/10">
+                <div className="h-full bg-[#4ade80] animate-[loading_3s_infinite] w-1/4 opacity-50" />
+              </div>
+            </button>
           </div>
         </div>
       </div>
