@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     id: 'skip',
     title: 'Skip — Food Delivery App',
     description: 'Complete UX/UI design for Canada\'s leading food delivery app. Features include restaurant browsing, real-time order tracking, address management with interactive maps, and seamless checkout experience.',
-    image: '/images/skip/cover.png',
+    image: '/images/skip/furniture-ui-v2.jpg',
     tag: 'SKIP',
     link: '#',
     gallery: [

@@ -11,9 +11,10 @@ interface OurWorkProps {
 interface ProjectImageProps {
   image: string;
   title: string;
+  className?: string;
 }
 
-const ProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
+const ProjectImage: React.FC<ProjectImageProps> = ({ image, title, className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
@@ -69,7 +70,7 @@ const ProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
   );
 };
 
-const YodaProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
+const YodaProjectImage: React.FC<ProjectImageProps> = ({ image, title, className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
@@ -98,7 +99,7 @@ const YodaProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="absolute inset-0 flex items-center justify-center pt-32 pointer-events-auto perspective-1000 overflow-visible"
+      className="absolute inset-0 flex items-center justify-center p-4 pointer-events-auto perspective-1000 overflow-visible"
       style={{ perspective: '1200px' }}
     >
       <div
@@ -111,7 +112,7 @@ const YodaProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
         <img
           src={image}
           alt={title}
-          className="w-[120%] md:w-[130%] max-w-none object-contain transition-transform duration-700"
+          className={`transition-transform duration-700 ${className || 'object-contain w-[90%] md:w-[85%] h-[85%]'}`}
           style={{
             transform: `translateZ(60px) scale(1.1) translateX(${rotate.y * -0.5}px) translateY(${rotate.x * 0.5}px)`,
             filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.18))',
@@ -161,81 +162,72 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
   };
 
   return (
-    <section id="work" className="py-20 md:py-32 bg-[#1a1a1a] relative overflow-hidden">
+    <section id="work" className="pb-20 md:pb-32 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#4ade80]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-5xl font-black text-white font-lexend tracking-tighter uppercase leading-none mb-6">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-[28px] font-bold text-white font-lexend tracking-tight mb-2 text-center">
             Our Work
           </h2>
           <div className="w-20 h-1.5 bg-[#4ade80] mx-auto rounded-full" />
         </div>
 
-        {/* Right Side: Project Cards Grid */}
-        <div className="flex-1 w-full">
-          <div className="flex justify-center">
+        {/* Project Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-0">
+          {PROJECTS.map((project, index) => (
             <div
-              ref={scrollRef}
-              onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
+              key={project.id}
               className={`
-                  flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 pb-12
-                  md:grid md:grid-cols-2 lg:gap-8 md:overflow-x-hidden md:pb-0 md:mx-0 md:px-0 md:place-items-center
-                  ${isDragging ? 'cursor-grabbing select-none snap-none' : 'cursor-default'}
-                `}
+                group relative flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden cursor-pointer 
+                transition-all duration-500 hover:border-white/20 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]
+                w-[90%] md:w-[92%] max-w-[580px]
+                ${index % 2 === 0 ? 'md:ml-auto md:mr-4' : 'md:mr-auto md:ml-4'}
+              `}
+              onClick={() => onProjectClick(project)}
             >
-              {PROJECTS.map((project) => (
-                <div key={project.id} className="w-full h-full flex-shrink-0 snap-center md:snap-align-none inline-block align-top">
-                  <div
-                    onClick={() => handleClick(project)}
-                    className="
-                      group relative w-full h-[500px] md:h-[540px]
-                      bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden 
-                      cursor-pointer flex flex-col
-                      transition-all duration-700 hover:border-white/20 hover:-translate-y-2 shadow-xl
-                    "
-                  >
-                    {/* Grainy Texture Overlay */}
-                    <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+              {/* Grainy Texture Overlay */}
+              <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
-                    {/* Top 75%: Content Area (Visual Only) */}
-                    <div className="h-[75%] p-6 md:p-8 relative flex flex-col items-center justify-center text-center">
-                      {/* Centered Overlapping Image with 3D Tilt Restoration */}
-                      <YodaProjectImage image={project.image} title={project.title} />
-                    </div>
-
-                    {/* Bottom 25%: Unified Footer */}
-                    <div className="h-[25%] px-6 md:px-8 flex items-center justify-between relative z-10 border-t border-white/10 bg-[#3a3a3a]">
-                      <div className="flex flex-col">
-                        <span className="font-serif text-lg md:text-xl italic text-white tracking-tighter opacity-90">{project.tag}</span>
-                      </div>
-
-                      <button className="px-4 py-2 rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] text-[#E5E5E5] text-[8px] font-black tracking-[0.2em] uppercase transition-all hover:bg-[#2A2A2A] hover:border-[#3a3a3a]">
-                        WEBSITE
-                      </button>
-                    </div>
-                  </div>
+              {/* Top: Thumbnail Area with 3D Animation restored */}
+              <div className="relative h-[260px] md:h-[320px] overflow-hidden bg-zinc-900/5 flex items-center justify-center">
+                <div className="w-full h-full p-6 md:p-8 flex items-center justify-center overflow-visible">
+                  <YodaProjectImage
+                    image={project.image}
+                    title={project.title}
+                    className={project.id === 'skip' ? 'w-[88%] md:w-[85%] h-[82%]' : ''}
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          {/* See More Work Button */}
-          <div className="mt-16 md:mt-24 flex justify-center">
-            <button className="flex items-center space-x-4 group px-12 py-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-700 shadow-xl relative overflow-hidden group">
-              <div className="flex items-center space-x-4 z-10">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_15px_#4ade80]" />
-                <span className="text-[11px] font-black uppercase tracking-[0.4em] text-white">See More Work</span>
+              {/* Bottom: Footer */}
+              <div className="p-5 md:p-6 flex items-center justify-between bg-[#3a3a3a] border-t border-white/10 relative z-10">
+                <div className="flex flex-col">
+                  <h3 className="text-[12px] font-bold text-white font-lexend tracking-tight uppercase">
+                    {project.client || project.tag}
+                  </h3>
+                </div>
+
+                <div className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white text-[9px] font-bold tracking-wider uppercase">
+                  {project.category?.includes('Mobile') ? 'MOBILE APP' : 'WEBSITE'}
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 h-[2px] w-full bg-[#4ade80]/10">
-                <div className="h-full bg-[#4ade80] animate-[loading_3s_infinite] w-1/4 opacity-50" />
-              </div>
-            </button>
-          </div>
+            </div>
+          ))}
+        </div>
+
+        {/* See More Work Button */}
+        <div className="mt-16 md:mt-24 flex justify-center">
+          <button className="flex items-center space-x-4 group px-12 py-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-700 shadow-xl relative overflow-hidden">
+            <div className="flex items-center space-x-4 z-10">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_15px_#4ade80]" />
+              <span className="text-[11px] font-black uppercase tracking-[0.4em] text-white">See More Work</span>
+            </div>
+            <div className="absolute bottom-0 left-0 h-[2px] w-full bg-[#4ade80]/10">
+              <div className="h-full bg-[#4ade80] animate-[loading_3s_infinite] w-1/4 opacity-50" />
+            </div>
+          </button>
         </div>
       </div>
     </section>
