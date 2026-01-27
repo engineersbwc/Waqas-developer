@@ -192,29 +192,32 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                 <div
                   onClick={() => handleClick(project)}
                   className="
-                    group relative w-full h-[450px] md:h-[500px]
-                    bg-[#F2F2F2] rounded-[2.5rem] overflow-hidden 
+                    group relative w-full h-[400px] md:h-[450px]
+                    bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden 
                     cursor-pointer flex flex-col
-                    transition-all duration-700 hover:-translate-y-2 shadow-xl border border-black/5
+                    transition-all duration-700 hover:border-white/20 hover:-translate-y-2 shadow-xl
                   "
                 >
-                  {/* Top 75%: Light Gray Background */}
+                  {/* Grainy Texture Overlay (Optional, matches Services.tsx) */}
+                  <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+
+                  {/* Top 75%: Content Area */}
                   <div className="h-[75%] p-6 md:p-8 relative flex flex-col items-center text-center">
 
                     {/* Headline with Pill */}
-                    <div className="space-y-3 mb-1">
-                      <h3 className="text-xl md:text-2xl font-lexend font-black tracking-tight text-black leading-tight flex flex-col items-center gap-1.5">
-                        <span className="bg-[#4ade80] text-black px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest inline-block">Green</span>
+                    <div className="space-y-2 mb-1 z-10">
+                      <h3 className="text-lg md:text-xl font-lexend font-black tracking-tight text-[#F5F5F5] leading-tight flex flex-col items-center gap-1">
+                        <span className="bg-[#4ade80] text-black px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest inline-block">Green</span>
                         <span>mobility for professionals</span>
                       </h3>
                     </div>
 
                     {/* Body Text: Product Specs */}
-                    <div className="text-[#8E8E93] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[200px] mt-1.5">
+                    <div className="text-[#A1A1AA] text-[8px] md:text-[9px] font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[180px] mt-1 z-10">
                       {project.features?.join(' • ')}
                     </div>
 
-                    <p className="text-[#8E8E93] text-[9px] lowercase leading-relaxed mt-2.5 max-w-[220px] font-medium opacity-80">
+                    <p className="text-[#A1A1AA] text-[8px] lowercase leading-relaxed mt-2 max-w-[200px] font-medium opacity-80 z-10">
                       {project.description}
                     </p>
 
@@ -222,13 +225,13 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                     <YodaProjectImage image={project.image} title={project.title} />
                   </div>
 
-                  {/* Bottom 25%: Slightly Darker Grey Footer */}
-                  <div className="h-[25%] bg-[#EBEBEB] px-8 flex items-center justify-between relative z-10 border-t border-black/5">
+                  {/* Bottom 25%: Unified Footer */}
+                  <div className="h-[25%] px-6 md:px-8 flex items-center justify-between relative z-10 border-t border-white/10 bg-[#3a3a3a]">
                     <div className="flex flex-col">
-                      <span className="font-serif text-xl md:text-2xl italic text-black/80 tracking-tighter">{project.tag}</span>
+                      <span className="font-serif text-lg md:text-xl italic text-white tracking-tighter opacity-90">{project.tag}</span>
                     </div>
 
-                    <button className="px-5 py-2 rounded-lg border border-black/10 text-black/60 text-[9px] font-black tracking-[0.2em] uppercase transition-all hover:bg-black hover:text-white hover:border-black">
+                    <button className="px-4 py-2 rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] text-[#E5E5E5] text-[8px] font-black tracking-[0.2em] uppercase transition-all hover:bg-[#2A2A2A] hover:border-[#3a3a3a]">
                       WEBSITE
                     </button>
                   </div>
