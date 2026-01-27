@@ -9,7 +9,7 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
   return (
-    <section id="services" className="py-6 md:py-10 px-6 bg-[#1a1a1a] relative overflow-hidden">
+    <section id="services" className="pt-4 pb-8 md:pt-6 md:pb-12 px-6 bg-[#1a1a1a] relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#f5ba41]/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -30,7 +30,7 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
               >
                 <div className={`
                   group h-full flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] p-6 md:p-8 
-                  relative overflow-hidden ${!isTopRow ? 'md:min-h-[520px]' : ''}
+                  relative overflow-hidden ${!isTopRow ? 'md:min-h-[480px]' : ''}
                 `}>
 
                   {/* Grainy Texture Overlay */}
@@ -47,7 +47,7 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
                       {/* Static Service Image */}
                       <div className={`
                         relative w-full rounded-xl overflow-hidden mb-6 border border-white/5 bg-zinc-900/50
-                        ${!isTopRow ? 'aspect-[4/3] md:aspect-square' : 'aspect-video'}
+                        ${!isTopRow ? 'aspect-[4/3]' : 'aspect-video'}
                       `}>
                         <img
                           src={service.image}

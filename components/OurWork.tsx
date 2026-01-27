@@ -112,7 +112,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#f5ba41]/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-[28px] font-bold text-white font-lexend tracking-tight mb-2">Our Work</h2>
           <div className="w-12 h-0.5 bg-[#f5ba41] mx-auto rounded-full"></div>
@@ -131,7 +131,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
           `}
         >
           {PROJECTS.map((project) => (
-            <div key={project.id} className="w-[75vw] md:w-full h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
+            <div key={project.id} className="w-[80vw] md:w-full h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
               <div
                 onClick={() => handleClick(project)}
                 className="

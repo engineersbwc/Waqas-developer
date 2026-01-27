@@ -8,7 +8,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   return (
-    <section id="home" className="min-h-[80vh] flex flex-col justify-center pt-32 pb-4 px-6 md:px-12">
+    <section id="home" className="min-h-[60vh] flex flex-col justify-center pt-20 pb-0 px-6 md:px-12">
       <div className="max-w-7xl mx-auto w-full">
 
         {/* Two-column layout on desktop, single column on mobile */}
@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           <div className="lg:col-span-6 flex flex-col items-center lg:items-start space-y-6 lg:mt-0 text-center lg:text-left">
             {/* Main Heading */}
             <h1 className="text-[30px] font-black text-[#F5F5F5] leading-[1.1] tracking-tighter">
-              We build <span className="text-[#f5ba41]">AI-powered</span> systems that automate business operations
+              We build AI-powered systems that automate business operations
             </h1>
 
             {/* Subheading */}
@@ -30,9 +30,10 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             {/* Button - hidden on mobile, shown on desktop */}
             <button
               onClick={onContactClick}
-              className="hidden lg:block bg-[#f5ba41] text-black px-8 py-4 md:px-10 md:py-5 rounded-lg border border-[#f5ba41] font-black text-base md:text-lg hover:bg-transparent hover:text-[#f5ba41] transition-all shadow-xl"
+              className="hidden lg:flex items-center space-x-3 bg-[#1a1a1a] border border-[#4ade80]/30 text-white px-8 py-4 md:px-10 md:py-5 rounded-lg font-black text-base md:text-lg hover:border-[#4ade80]/60 hover:bg-zinc-900 active:scale-95 transition-all shadow-xl"
             >
-              Book a Call
+              <div className="w-3 h-3 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_10px_#4ade80]/50" />
+              <span>Book a Call</span>
             </button>
 
             {/* Description - hidden on mobile, shown on desktop */}
@@ -52,9 +53,10 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           <div className="lg:hidden flex flex-col items-center space-y-6 text-center w-full">
             <button
               onClick={onContactClick}
-              className="w-full bg-[#f5ba41] text-black px-8 py-4 rounded-lg border border-[#f5ba41] font-black text-base hover:bg-transparent hover:text-[#f5ba41] transition-all"
+              className="w-full flex items-center justify-center space-x-3 bg-[#1a1a1a] border border-[#4ade80]/30 text-white px-8 py-4 rounded-lg font-black text-base hover:border-[#4ade80]/60 hover:bg-zinc-900 active:scale-95 transition-all"
             >
-              Book a Call
+              <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_8px_#4ade80]/50" />
+              <span>Book a Call</span>
             </button>
           </div>
         </div>

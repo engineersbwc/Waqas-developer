@@ -43,9 +43,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
         <div className="relative">
           <div className="text-center mb-8 md:mb-12">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-4 md:mb-6">
-              <span className="w-1 h-1 rounded-full bg-[#f5ba41] animate-pulse"></span>
-              <p className="text-[#f5ba41] font-bold text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-inter">Let's build your vision</p>
+            <div className="flex items-center space-x-3 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_5px_#4ade80]"></span>
+              <p className="text-[#4ade80] font-bold text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-inter">Let's build your vision</p>
             </div>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-white font-lexend tracking-tighter leading-none">Choose your path</h2>
             <p className="mt-3 text-zinc-500 font-medium text-xs md:text-sm max-w-md mx-auto leading-relaxed">Ready to start? Select how you'd like to connect with us.</p>
