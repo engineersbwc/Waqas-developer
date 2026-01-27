@@ -8,7 +8,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   return (
-    <section id="home" className="min-h-[60vh] flex flex-col justify-center pt-0 md:pt-20 pb-0 px-6 md:px-12">
+    <section id="home" className="min-h-[60vh] flex flex-col justify-start md:justify-center pt-8 md:pt-20 pb-0 px-6 md:px-12">
       <div className="max-w-7xl mx-auto w-full">
 
         {/* Two-column layout on desktop, single column on mobile */}
@@ -17,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           {/* Left Column: Text Content (appears first on mobile = top) */}
           <div className="lg:col-span-6 flex flex-col items-center lg:items-start space-y-6 lg:mt-0 text-center lg:text-left">
             {/* Main Heading */}
-            <h1 className="text-[38px] md:text-[30px] font-black text-[#F5F5F5] leading-[1.1] tracking-tighter">
+            <h1 className="text-[32px] md:text-[30px] font-black text-[#F5F5F5] leading-[1.1] tracking-tighter">
               We build AI-powered systems that automate business operations
             </h1>
 
