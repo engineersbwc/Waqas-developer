@@ -57,8 +57,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
         {/* Project Overview Section: 2-Column (Img Left, Text Right) */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <Reveal className="order-2 lg:order-1">
-            <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl">
+          <Reveal className="order-2 lg:order-1 h-full">
+            <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl aspect-[16/10]">
               <img
                 src={project.image}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -115,7 +115,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
               </div>
             </div>
           </Reveal>
-          <Reveal>
+          <Reveal className="h-full">
             <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
               <img
                 src={project.gallery?.[0] || project.image}
@@ -128,8 +128,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
         {/* Problem & Solution Section: 2-Column (Visual Left, Text Right) */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <Reveal>
-            <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#121212] border border-white/10 p-16 flex items-center justify-center bg-dots-white/5">
+          <Reveal className="h-full">
+            <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#121212] border border-white/10 p-16 flex items-center justify-center bg-dots-white/5">
               <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
               <img
                 src={project.gallery?.[1] || project.image}
@@ -172,7 +172,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {project.features?.map((feature, idx) => (
-              <Reveal key={idx} delay={idx * 0.1}>
+              <Reveal key={idx} delay={idx * 0.1} className="h-full">
                 <div className="h-full p-12 rounded-[2.5rem] bg-[#1a1a1a] border border-white/5 hover:border-white/20 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#4ade80]/5 blur-[60px] rounded-full -mr-16 -mt-16 group-hover:bg-[#4ade80]/10 transition-all" />
                   <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-10 group-hover:bg-white/10 transition-colors">
@@ -252,8 +252,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
           <div className="grid grid-cols-1 gap-8">
             {project.futureEnhancements?.map((item, idx) => (
-              <Reveal key={idx} delay={idx * 0.1}>
-                <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-10 p-10 md:p-14 rounded-[3rem] bg-[#1a1a1a] border border-white/5 group hover:border-[#4ade80]/30 transition-all relative overflow-hidden">
+              <Reveal key={idx} delay={idx * 0.1} className="h-full">
+                <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-10 p-10 md:p-14 rounded-[3rem] bg-[#1a1a1a] border border-white/5 group hover:border-[#4ade80]/30 transition-all relative overflow-hidden min-h-full">
                   <div className="absolute top-0 left-0 w-2 h-full bg-zinc-800 group-hover:bg-[#4ade80] transition-all" />
                   <div className="text-4xl md:text-6xl font-black text-zinc-900 group-hover:text-[#4ade80]/10 transition-colors font-lexend">0{idx + 1}</div>
                   <div className="flex-1">
