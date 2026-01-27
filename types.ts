@@ -14,12 +14,16 @@ export interface Project {
   title: string;
   description: string;
   image: string;
-  tag: string;
+  tag?: string;
+  platform?: string;
   link?: string;
   category?: string;
   client?: string;
   services?: string[];
   technologies?: string[];
+  role?: string;
+  designAesthetic?: string;
+  corePalette?: string;
   timeline?: string;
   vision?: string;
   problemStatement?: string;

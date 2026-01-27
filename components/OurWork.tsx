@@ -209,12 +209,12 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
               {/* Bottom: Footer */}
               <div className="p-5 md:p-6 flex items-center justify-between bg-[#3a3a3a] border-t border-white/10 relative z-10">
                 <div className="flex flex-col">
-                  <h3 className="text-[12px] font-bold text-white font-lexend tracking-tight uppercase">
+                  <h3 className="text-[20px] font-bold text-white font-lexend tracking-tight uppercase">
                     {project.client || project.tag}
                   </h3>
                 </div>
 
-                <div className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white text-[9px] font-bold tracking-wider uppercase">
+                <div className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white text-[20px] font-bold tracking-wider uppercase">
                   {project.category?.includes('Mobile') ? 'MOBILE APP' : 'WEBSITE'}
                 </div>
               </div>

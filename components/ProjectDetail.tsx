@@ -38,12 +38,12 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-6 py-20 space-y-40">
+      <main className="max-w-7xl mx-auto px-6 py-12 space-y-20">
 
         {/* Top Section: Title & Development Type */}
         <Reveal>
           <div className="text-center space-y-8">
-            <h1 className="text-5xl md:text-9xl font-black text-white font-lexend tracking-tighter leading-none uppercase max-w-5xl mx-auto">
+            <h1 className="text-[26px] font-black text-white font-lexend tracking-tighter leading-none uppercase max-w-5xl mx-auto">
               {project.title}
             </h1>
             <div className="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
@@ -56,9 +56,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         </Reveal>
 
         {/* 2. Project Overview - 16:8 Image + Card */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-stretch">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-4 items-stretch">
           <Reveal className="h-full">
-            <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl aspect-[16/8]">
+            <div className="relative h-full min-h-[400px] group overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl">
               <img
                 src={project.image}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -68,25 +68,25 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
             </div>
           </Reveal>
           <Reveal className="h-full">
-            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-center space-y-8">
+            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-8">
               <div className="space-y-4">
-                <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">
+                <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">
                   Project Overview
                 </h2>
                 <div className="w-16 h-1 bg-[#4ade80] rounded-full" />
               </div>
-              <p className="text-base md:text-lg text-zinc-400 leading-relaxed font-medium line-clamp-4">
+              <p className="text-base md:text-lg text-zinc-400 leading-relaxed font-medium">
                 {project.vision || project.description}
               </p>
             </div>
           </Reveal>
         </section>
         {/* 3. Project Profile (Basic Info) - Card + 16:8 Image */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-stretch">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-4 items-stretch">
           <Reveal className="h-full">
-            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-center space-y-12">
+            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-12">
               <div className="space-y-4">
-                <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">
+                <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">
                   Project Profile
                 </h2>
                 <div className="w-16 h-1 bg-zinc-700/50 rounded-full" />
@@ -94,32 +94,30 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div className="space-y-2">
-                  <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Industry</span>
-                  <p className="text-white font-bold text-base">{project.category?.split(',')[0] || 'Technology'}</p>
+                  <span className="text-[12px] font-black text-zinc-400 uppercase tracking-[0.2em] block">Industry</span>
+                  <p className="text-white font-bold text-base">{project.category || 'Technology'}</p>
                 </div>
                 <div className="space-y-2">
                   <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Platform</span>
-                  <p className="text-white font-bold text-base">{project.tag}</p>
-                </div>
-                <div className="space-y-4 lg:col-span-2">
-                  <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Technologies</span>
-                  <div className="flex flex-wrap gap-2.5 pt-2">
-                    {project.technologies?.map((tech, idx) => (
-                      <span key={idx} className="px-5 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black text-zinc-300 uppercase tracking-widest hover:border-white/20 transition-all">
-                        {tech}
-                      </span>
-                    )) || <span className="text-zinc-600 font-black uppercase text-[10px]">Premium Architecture</span>}
-                  </div>
+                  <p className="text-white font-bold text-base">{project.platform || project.tag}</p>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Duration</span>
-                  <p className="text-white font-bold text-base">{project.timeline || 'Project Cycle'}</p>
+                  <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Role</span>
+                  <p className="text-white font-bold text-base">{project.role || 'Design & Development'}</p>
+                </div>
+                <div className="space-y-2">
+                  <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Design Aesthetic</span>
+                  <p className="text-white font-bold text-base">{project.designAesthetic || 'Modern'}</p>
+                </div>
+                <div className="space-y-4 lg:col-span-2">
+                  <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Core Palette</span>
+                  <p className="text-white font-bold text-base">{project.corePalette || 'Monochrome is king'}</p>
                 </div>
               </div>
             </div>
           </Reveal>
           <Reveal className="h-full">
-            <div className="relative aspect-[16/8] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl h-full">
+            <div className="relative h-full min-h-[400px] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
               <img
                 src={project.gallery?.[0] || project.image}
                 className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
@@ -130,22 +128,22 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         </section>
 
         {/* 4 & 5. Problem & Solution - 16:8 Visual + Card */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-stretch">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-4 items-stretch">
           <Reveal className="h-full">
-            <div className="relative aspect-[16/8] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl flex items-center justify-center p-12">
+            <div className="relative h-full min-h-[400px] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
               <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
               <img
                 src={project.gallery?.[1] || project.image}
-                className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                className="relative z-10 w-full h-full object-cover transition-all duration-700 hover:scale-105"
                 alt="Challenge Visual"
               />
             </div>
           </Reveal>
           <Reveal className="h-full">
-            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-center space-y-16">
+            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-16">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">The Problem</h3>
+                  <h3 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">The Problem</h3>
                   <div className="w-12 h-1 bg-zinc-800 rounded-full" />
                 </div>
                 <p className="text-base text-zinc-500 leading-relaxed font-medium line-clamp-3">
@@ -155,7 +153,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="text-[14px] font-black text-[#4ade80] font-lexend tracking-[0.3em] uppercase">The Solution</h3>
+                  <h3 className="text-[26px] font-black text-[#4ade80] font-lexend tracking-[0.1em] uppercase">The Solution</h3>
                   <div className="w-12 h-1 bg-[#4ade80]/40 rounded-full" />
                 </div>
                 <p className="text-base text-zinc-300 leading-relaxed font-bold line-clamp-4">
@@ -169,7 +167,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         {/* 6. Key Features (Highlights) - Card Grid */}
         <section className="space-y-16">
           <Reveal className="text-center space-y-4">
-            <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">
+            <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">
               Key Features
             </h2>
             <div className="w-16 h-1 bg-zinc-800 mx-auto rounded-full" />
@@ -196,29 +194,29 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         <Reveal>
           <section className="bg-[#1a1a1a] border border-white/10 rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden text-center">
             <div className="space-y-4 mb-16">
-              <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">Outcome & Impact</h2>
+              <h2 className="text-[16px] font-black text-white font-lexend tracking-[0.1em] uppercase">Outcome & Impact</h2>
               <div className="w-16 h-1 bg-[#4ade80] mx-auto rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 items-center">
               {project.outcomes?.map((outcome, idx) => (
-                <div key={idx} className="space-y-4 group">
-                  <div className="text-4xl md:text-6xl font-black text-white font-lexend group-hover:text-[#4ade80] transition-colors">{outcome.split(' ')[0]}</div>
-                  <div className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.4em]">{outcome.split(' ').slice(1).join(' ')}</div>
+                <div key={idx} className="space-y-2 group">
+                  <div className="text-[22px] font-black text-white font-lexend group-hover:text-[#4ade80] transition-colors">{outcome.split(' ')[0]}</div>
+                  <div className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.4em]">{outcome.split(' ').slice(1).join(' ')}</div>
                 </div>
               )) || (
                   <>
-                    <div className="space-y-4">
-                      <div className="text-4xl md:text-6xl font-black text-white font-lexend">60%</div>
-                      <div className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.4em]">Workload Reduction</div>
+                    <div className="space-y-2">
+                      <div className="text-1xl md:text-6xl font-black text-white font-lexend">60%</div>
+                      <div className="text-[6px] font-black text-zinc-500 uppercase tracking-[0.4em]">Workload Reduction</div>
                     </div>
                     <div className="space-y-4">
-                      <div className="text-4xl md:text-6xl font-black text-white font-lexend">24/7</div>
-                      <div className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.4em]">Active Support</div>
+                      <div className="text-2xl md:text-6xl font-black text-white font-lexend">24/7</div>
+                      <div className="text-[6px] font-black text-zinc-500 uppercase tracking-[0.4em]">Active Support</div>
                     </div>
                     <div className="space-y-4">
-                      <div className="text-4xl md:text-6xl font-black text-white font-lexend">Top</div>
-                      <div className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.4em]">Market Performance</div>
+                      <div className="text-2xl md:text-6xl font-black text-white font-lexend">Top</div>
+                      <div className="text-[6px] font-black text-zinc-500 uppercase tracking-[0.4em]">Market Performance</div>
                     </div>
                   </>
                 )}
@@ -229,7 +227,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         {/* 8. Target Users (Kon use karega?) - Tag Cloud Card */}
         <section className="space-y-12">
           <Reveal className="text-center space-y-4">
-            <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">Target Users</h2>
+            <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">Target Users</h2>
             <div className="w-16 h-1 bg-zinc-800 mx-auto rounded-full" />
           </Reveal>
 
@@ -247,8 +245,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         {/* 9. Future Roadmap (Aagay kya?) - Timeline Cards */}
         <section className="max-w-5xl mx-auto space-y-16">
           <Reveal className="text-center space-y-4">
-            <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">Future Roadmap</h2>
-            <p className="text-[12px] text-zinc-500 font-bold uppercase tracking-[0.4em]">Planned Evolution</p>
+            <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.3em] uppercase">Future Roadmap</h2>
+            <p className="text-[16px] text-zinc-500 font-bold uppercase tracking-[0.4em]">Planned Evolution</p>
           </Reveal>
 
           <div className="grid grid-cols-1 gap-6">
@@ -259,7 +257,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
                   <div className="text-3xl md:text-5xl font-black text-zinc-900 group-hover:text-[#4ade80]/10 transition-colors font-lexend shrink-0">0{idx + 1}</div>
                   <div className="flex-1">
                     <h4 className="text-xl font-bold text-white mb-1 font-lexend">{item}</h4>
-                    <span className="text-[10px] text-zinc-600 font-black uppercase tracking-widest block">Phase Milestone</span>
+                    <span className="text-[20px] text-zinc-600 font-black uppercase tracking-widest block">Phase Milestone</span>
                   </div>
                   <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center shrink-0">
                     <div className="w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover:bg-[#4ade80] transition-colors" />

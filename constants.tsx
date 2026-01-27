@@ -15,24 +15,49 @@ export const PROJECTS: Project[] = [
     id: 'skip',
     title: 'Wudo — Exotic Minimal Furniture',
     description: 'A premium e-commerce experience for exotic minimal furniture. Features include high-end product visualization, seamless checkout, and a minimalist design aesthetic that highlights craftsmanship.',
+    vision: 'WUDO is a premium e-commerce platform dedicated to "Exotic Minimal Furniture." The project focuses on bridging the gap between luxury craftsmanship and digital shopping. The goal was to create a visual-first experience where the furniture isn\'t just displayed but celebrated. By utilizing a minimalist design language, the platform ensures that the high-quality textures and unique designs of the wooden furniture remain the primary focus of the user.',
     image: '/images/skip/furniture-ui-v2.jpg',
     tag: 'WUDO',
     link: '#',
     gallery: [
-      '/images/skip/1.png',
-      '/images/skip/2.png',
+      '/images/skip/wudo-profile.jpg',
+      '/images/skip/problem-solution.jpg',
       '/images/skip/3.png',
       '/images/skip/4.png'
     ],
     client: 'Wudo',
-    category: 'E-commerce Design',
+    category: 'E-commerce / Home Decor / Interior Design',
+    tag: 'Multi-device (Desktop, Tablet, Mobile)',
+    role: 'Lead UI/UX Designer',
+    designAesthetic: 'Modern Minimalism, High-End Luxury, Clean Typography',
+    corePalette: 'Neutral Off-whites, Midnight Navy, and Soft Charcoal accents',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+    problemStatement: 'Online furniture shopping often suffers from several user experience friction points: Visual Overload cluttered with banners, Poor Spatial Awareness making scale judgment difficult, Complex Navigation for technical details, and Mobile Disconnection due to crammed layouts.',
+    solution: 'The WUDO interface was designed to solve these issues through a "Less is More" philosophy: Negative Space Mastery for a gallery-like experience, Interactive Visualization with 360-degree rotation, Simplified Information Architecture replacing text with icons, and Mobile-First Precision retaining premium features.',
     features: [
-      'High-end Product Visualization',
-      'Minimalist Shopping Experience',
-      'Exclusive Collection Browsing',
-      'Secure Checkout Flow',
-      'Craftsmanship Showcase'
+      '360° Product Rotation',
+      'Dynamic Dimension Toggle',
+      'Interactive Color Swatches',
+      'One-Tap Checkout',
+      'High-Fidelity Product Gallery'
+    ],
+    outcomes: [
+      'Enhanced Brand Identity',
+      'Increased User Retention',
+      'Lower Return Rates',
+      'Seamless Conversion'
+    ],
+    targetUsers: [
+      'Minimalist Enthusiasts',
+      'High-Net-Worth Individuals',
+      'Interior Designers',
+      'Tech-Savvy Homeowners'
+    ],
+    futureEnhancements: [
+      'AR Integration',
+      'AI Style Assistant',
+      'Custom Build Preview',
+      'Sustainable Sourcing Badge'
     ],
   },
   {

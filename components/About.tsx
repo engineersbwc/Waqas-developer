@@ -44,14 +44,12 @@ export const About: React.FC = () => {
           <Reveal className="relative">
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl group">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"
+                src="/images/about-new.jpg"
                 alt="Our Studio"
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-white text-lg font-bold italic font-inter">"We don't just build software; we solve problems."</p>
-              </div>
+
             </div>
           </Reveal>
         </div>
