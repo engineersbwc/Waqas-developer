@@ -69,6 +69,59 @@ const ProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
   );
 };
 
+const YodaProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+
+    setRotate({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="absolute inset-0 flex items-center justify-center pt-32 pointer-events-auto perspective-1000 overflow-visible"
+      style={{ perspective: '1200px' }}
+    >
+      <div
+        className="w-full h-full transition-transform duration-200 ease-out flex items-center justify-center"
+        style={{
+          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+          transformStyle: 'preserve-3d'
+        }}
+      >
+        <img
+          src={image}
+          alt={title}
+          className="w-[120%] md:w-[130%] max-w-none object-contain transition-transform duration-700"
+          style={{
+            transform: `translateZ(60px) scale(1.1) translateX(${rotate.y * -0.5}px) translateY(${rotate.x * 0.5}px)`,
+            filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.18))',
+          }}
+        />
+      </div>
+    </div>
+  );
+};
+
 export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -165,17 +218,8 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                       {project.description}
                     </p>
 
-                    {/* Centered Overlapping Image */}
-                    <div className="absolute inset-0 flex items-center justify-center pt-32 pointer-events-none">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-[120%] md:w-[130%] max-w-none object-contain transition-transform duration-700 group-hover:scale-105 group-hover:-translate-x-2"
-                        style={{
-                          filter: 'drop-shadow(0 30px 50px rgba(0,0,0,0.15))',
-                        }}
-                      />
-                    </div>
+                    {/* Centered Overlapping Image with 3D Tilt Restoration */}
+                    <YodaProjectImage image={project.image} title={project.title} />
                   </div>
 
                   {/* Bottom 20%: Dark Charcoal Footer */}
