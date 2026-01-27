@@ -188,7 +188,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
               `}
           >
             {PROJECTS.map((project) => (
-              <div key={project.id} className="w-[85vw] md:w-full h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
+              <div key={project.id} className="w-[85vw] md:w-full max-w-[380px] mx-auto h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
                 <div
                   onClick={() => handleClick(project)}
                   className="
@@ -198,29 +198,11 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                     transition-all duration-700 hover:border-white/20 hover:-translate-y-2 shadow-xl
                   "
                 >
-                  {/* Grainy Texture Overlay (Optional, matches Services.tsx) */}
+                  {/* Grainy Texture Overlay */}
                   <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
-                  {/* Top 75%: Content Area */}
-                  <div className="h-[75%] p-6 md:p-8 relative flex flex-col items-center text-center">
-
-                    {/* Headline with Pill */}
-                    <div className="space-y-2 mb-1 z-10">
-                      <h3 className="text-lg md:text-xl font-lexend font-black tracking-tight text-[#F5F5F5] leading-tight flex flex-col items-center gap-1">
-                        <span className="bg-[#4ade80] text-black px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest inline-block">Green</span>
-                        <span>mobility for professionals</span>
-                      </h3>
-                    </div>
-
-                    {/* Body Text: Product Specs */}
-                    <div className="text-[#A1A1AA] text-[8px] md:text-[9px] font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[180px] mt-1 z-10">
-                      {project.features?.join(' • ')}
-                    </div>
-
-                    <p className="text-[#A1A1AA] text-[8px] lowercase leading-relaxed mt-2 max-w-[200px] font-medium opacity-80 z-10">
-                      {project.description}
-                    </p>
-
+                  {/* Top 75%: Content Area (Visual Only) */}
+                  <div className="h-[75%] p-6 md:p-8 relative flex flex-col items-center justify-center text-center">
                     {/* Centered Overlapping Image with 3D Tilt Restoration */}
                     <YodaProjectImage image={project.image} title={project.title} />
                   </div>
