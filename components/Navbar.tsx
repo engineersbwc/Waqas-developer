@@ -35,107 +35,50 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[9999] flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-300 ${scrolled ? 'bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/5 shadow-2xl' : 'bg-transparent'
-          }`}
+        className={`fixed top-0 left-0 right-0 z-[9999] flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0 bg-transparent'}`}
       >
-        {/* Logo Left - Stacks and hides on scroll */}
+        {/* Logo Left - Stacks and Centered */}
         <div
-          className={`flex-shrink-0 relative z-50 flex flex-col items-center transition-all duration-500 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
-          onClick={() => window.scrollTo(0, 0)}
+          className="flex-shrink-0 relative z-50 flex flex-col items-center group cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="text-xl md:text-2xl font-black font-lexend tracking-tighter text-[#F5F5F5] leading-none cursor-pointer">
+          <div className="text-xl md:text-2xl font-black font-lexend tracking-tighter text-white leading-none">
             Innovita
           </div>
-          <div className="text-[8px] md:text-[10px] font-black font-lexend tracking-[0.2em] text-[#4ade80] leading-none -mt-0.5 uppercase cursor-pointer">
+          <div className="text-[10px] md:text-[12px] font-black font-lexend tracking-[0.3em] text-[#4ade80] leading-none mt-0 uppercase">
             Soft
           </div>
         </div>
 
-        {/* Centered Nav Pill - Hides on scroll */}
-        <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 bg-[#111]/40 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-2 shadow-2xl items-center justify-center gap-2 transition-all duration-500 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        {/* Centered Nav Pill */}
+        <div className="flex bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 md:px-6 py-2 shadow-2xl items-center justify-center gap-1 md:gap-2">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               onClick={(e) => handleLinkClick(e, link.id)}
-              className="px-6 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 rounded-xl transition-all whitespace-nowrap text-center"
+              className="px-3 md:px-6 py-1.5 text-[10px] md:text-sm font-bold text-zinc-300 hover:text-[#4ade80] rounded-full transition-all whitespace-nowrap text-center"
             >
               {link.name}
             </a>
           ))}
         </div>
 
-        {/* Right CTA (Desktop) - Always visible */}
-        <div className="hidden md:block">
+        {/* Right CTA (Desktop Only for balance) */}
+        <div className="hidden lg:block">
           <button
             onClick={onContactClick}
-            className="flex items-center space-x-2 bg-white/5 border border-white/10 text-white px-6 py-2.5 rounded-xl transition-all font-medium text-sm hover:bg-white/10 hover:border-[#f5ba41]/40 active:scale-95"
+            className="flex items-center space-x-2 bg-white/5 border border-white/10 text-white px-6 py-2.5 rounded-xl transition-all font-medium text-sm hover:bg-white/10 hover:border-[#4ade80]/40 active:scale-95"
           >
-            <div className="w-2 h-2 rounded-full bg-[#f5ba41] animate-pulse shadow-[0_0_8px_#f5ba41]" />
+            <div className="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_8px_#4ade80]" />
             <span>Book a Call</span>
           </button>
         </div>
 
-        {/* Mobile Hamburger Toggle - Hides on scroll */}
-        <div className={`md:hidden relative z-50 transition-all duration-500 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Mobile CTA Button - Shown on scroll ONLY on mobile */}
-        <div className={`md:hidden transition-all duration-500 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <button
-            onClick={(e) => onContactClick(e)}
-            className="flex items-center space-x-2 bg-white/5 border border-white/10 text-white px-5 py-2 rounded-xl transition-all font-medium text-xs hover:bg-white/10"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#f5ba41] animate-pulse" />
-            <span>Book a Call</span>
-          </button>
-        </div>
+        {/* Mobile Spacer to maintain center distribution if needed, or hide on mobile if you want pill right-aligned */}
+        <div className="lg:hidden w-[60px]" /> {/* Balancing the logo width */}
 
       </nav>
-
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 z-[9998] bg-[#121212]/95 backdrop-blur-xl pt-32 px-6 md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-[-10%]'
-          }`}
-      >
-        <div className="flex flex-col items-center space-y-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={(e) => handleLinkClick(e, link.id)}
-              className="text-4xl font-bold text-white tracking-tight hover:text-[#f5ba41] transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button
-            onClick={(e) => { setIsOpen(false); onContactClick(e); }}
-            className="flex items-center justify-center space-x-3 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg w-full max-w-xs mt-8 hover:bg-white/10 active:scale-95 transition-all"
-          >
-            <div className="w-2.5 h-2.5 rounded-full bg-[#f5ba41] animate-pulse shadow-[0_0_8px_#f5ba41]/50" />
-            <span>Book a Call</span>
-          </button>
-        </div>
-      </div>
     </>
   );
 };
