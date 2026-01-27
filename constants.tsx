@@ -13,29 +13,16 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'p1',
-    title: 'Skip',
-    description: 'A revolutionary fintech app simplification for seamless payments.',
-    image: '/images/skip/cover.png',
-    tag: 'UX/UI',
+    title: 'Green mobility for professionals',
+    description: 'Yoda is an e-mobylette that weighs 28 kilos and goes up to 45 km/h with a range of 80 km. From €149/month, we register, insure, provide and maintain your fleet.',
+    image: '/images/projects/yoda.png',
+    tag: 'Yoda',
     link: '#',
-    gallery: [
-      '/public/images/project/ux-ui-skip/1.png',
-      '/public/images/project/ux-ui-skip/2.png',
-      '/public/images/project/ux-ui-skip/3.png',
-      '/public/images/project/ux-ui-skip/4.png'
-    ],
-    client: 'Skip',
-    timeline: '2023',
-    category: 'Fintech',
-    services: ['UX/UI Design', 'App Redesign', 'User Research'],
-    technologies: ['Figma', 'Protopie', 'React Native'],
-    vision: 'Skip aims to remove friction from digital payments. The goal was to create an interface that feels invisible, allowing users to focus on the transaction rather than the tool.',
-    problemStatement: 'Previous iterations were cluttered and confusing. Users found it hard to navigate basic payment flows.',
-    solution: 'We stripped away the noise, focusing on a minimal, gesture-based interface. Large, clear actions and subtle haptics guide the user confidently.',
-    features: ['Gesture-based Navigation', 'Dark Mode Default', 'Biometric Quick-Pay'],
-    outcomes: ['40% Faster Checkout', 'Award-Winning Design'],
-    targetUsers: ['Digital Natives', 'Small Business Owners'],
-    futureEnhancements: ['Voice Payments', 'Smart Watch Integration']
+    gallery: ['/images/projects/yoda.png'],
+    client: 'Yoda',
+    category: 'Electric Mobility',
+    technologies: ['React', 'Three.js'],
+    features: ['28kg weight', '45km/h speed', '80km range', '€149/month'],
   },
   {
     id: 'p2',

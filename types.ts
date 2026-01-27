@@ -14,7 +14,7 @@ export interface Project {
   title: string;
   description: string;
   image: string;
-  tag: 'WEBSITE' | 'UX/UI' | 'MOBILE APP' | 'GAME APP';
+  tag: string;
   link?: string;
   category?: string;
   client?: string;
