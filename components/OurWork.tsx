@@ -144,18 +144,27 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
                 {/* 3D Interactive Image */}
                 <ProjectImage image={project.image} title={project.title} />
 
-                {/* Title and Category Tag */}
-                <div className="flex items-start justify-between gap-3 mt-1">
-                  <h3 className="text-[#F5F5F5] text-[17px] md:text-xl font-lexend font-bold tracking-tight leading-snug">
-                    {project.title}
-                  </h3>
-                  <div className="flex-shrink-0">
-                    <span className="
-                      px-3 py-1 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6] text-[#FFFFFF] 
-                      text-[9px] font-black tracking-wider uppercase whitespace-nowrap
-                    ">
-                      {project.tag}
-                    </span>
+                {/* 1. Project Name + Development Type */}
+                <div className="flex flex-col space-y-3 mt-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-black text-[#4ade80] uppercase tracking-widest block">Project Name</span>
+                      <h3 className="text-white text-lg md:text-xl font-lexend font-bold tracking-tight leading-tight">
+                        {project.title}
+                      </h3>
+                    </div>
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                        <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">{project.tag}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-black text-[#4ade80] uppercase tracking-widest block">Development Type</span>
+                    <p className="text-zinc-500 text-[12px] font-bold tracking-tight">
+                      {project.category || 'Expert Software Development'}
+                    </p>
                   </div>
                 </div>
 

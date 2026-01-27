@@ -55,7 +55,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
           </div>
         </Reveal>
 
-        {/* Project Overview Section: 2-Column (Img Left, Text Right) */}
+        {/* 2. Project Overview - 3-4 lines max */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <Reveal className="order-2 lg:order-1 h-full">
             <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl aspect-[16/10]">
@@ -69,12 +69,12 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
           </Reveal>
           <Reveal className="order-1 lg:order-2 space-y-10">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-6xl font-black text-white font-lexend tracking-tighter uppercase">
+              <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">
                 Project Overview
               </h2>
               <div className="w-20 h-1.5 bg-[#4ade80] rounded-full" />
             </div>
-            <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-zinc-400 leading-relaxed font-medium line-clamp-4">
               {project.vision || project.description}
             </p>
           </Reveal>
@@ -84,7 +84,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <Reveal className="space-y-16">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-6xl font-black text-white font-lexend tracking-tighter uppercase">
+              <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">
                 Project Profile
               </h2>
               <div className="w-20 h-1.5 bg-zinc-700/50 rounded-full" />
@@ -92,15 +92,15 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
               <div className="space-y-3">
-                <span className="text-[11px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Industry</span>
-                <p className="text-white font-bold text-xl">{project.category || 'Technology'}</p>
+                <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Industry</span>
+                <p className="text-white font-bold text-base">{project.category?.split(',')[0] || 'Technology'}</p>
               </div>
               <div className="space-y-3">
-                <span className="text-[11px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Platform</span>
-                <p className="text-white font-bold text-xl">{project.tag}</p>
+                <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Platform</span>
+                <p className="text-white font-bold text-base">{project.tag}</p>
               </div>
               <div className="space-y-4 lg:col-span-2">
-                <span className="text-[11px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Technologies Used</span>
+                <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Technologies</span>
                 <div className="flex flex-wrap gap-2.5 pt-2">
                   {project.technologies?.map((tech, idx) => (
                     <span key={idx} className="px-5 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black text-zinc-300 uppercase tracking-widest hover:border-white/20 transition-all">
@@ -110,8 +110,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
                 </div>
               </div>
               <div className="space-y-3">
-                <span className="text-[11px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Timeline</span>
-                <p className="text-white font-bold text-xl">{project.timeline || 'Project Cycle'}</p>
+                <span className="text-[12px] font-black text-zinc-500 uppercase tracking-[0.2em] block">Duration</span>
+                <p className="text-white font-bold text-base">{project.timeline || 'Project Cycle'}</p>
               </div>
             </div>
           </Reveal>
@@ -139,32 +139,34 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
             </div>
           </Reveal>
           <Reveal className="space-y-20">
+            {/* 4. The Problem - 2-3 lines */}
             <div className="space-y-10">
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-5xl font-black text-white font-lexend tracking-tighter uppercase">The Problem</h3>
+                <h3 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">The Problem</h3>
                 <div className="w-12 h-1.5 bg-zinc-800 rounded-full" />
               </div>
-              <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-                {project.problemStatement || "Identified key operational bottlenecks and user experience friction points that were hindering growth and engagement efficiency."}
+              <p className="text-lg text-zinc-500 leading-relaxed font-medium line-clamp-3">
+                {project.problemStatement || "Identified key operational bottlenecks and user experience friction points."}
               </p>
             </div>
 
+            {/* 5. The Solution - 2-4 lines */}
             <div className="space-y-10">
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-5xl font-black text-white font-lexend tracking-tighter uppercase">The Solution</h3>
+                <h3 className="text-[14px] font-black text-[#4ade80] font-lexend tracking-[0.3em] uppercase">The Solution</h3>
                 <div className="w-12 h-1.5 bg-[#4ade80]/40 rounded-full" />
               </div>
-              <p className="text-xl text-zinc-300 leading-relaxed font-bold">
-                {project.solution || "Architected a high-performance solution leveraging advanced automation and user-centric design to streamline workflows and maximize impact."}
+              <p className="text-lg text-zinc-300 leading-relaxed font-bold line-clamp-4">
+                {project.solution || "Architected a high-performance solution leveraging advanced automation and user-centric design."}
               </p>
             </div>
           </Reveal>
         </section>
 
-        {/* Key Features Section */}
+        {/* 6. Key Features (Highlights) - 5-6 bullets max */}
         <section className="space-y-24">
           <Reveal className="text-center space-y-4">
-            <h2 className="text-4xl md:text-7xl font-black text-white font-lexend tracking-tighter uppercase">
+            <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">
               Key Features
             </h2>
             <div className="w-24 h-1.5 bg-zinc-800 mx-auto rounded-full" />
@@ -188,13 +190,13 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
           </div>
         </section>
 
-        {/* Outcome & Impact Section */}
+        {/* 7. Outcome & Impact Section */}
         <Reveal>
           <section className="bg-[#1a1a1a] border border-white/10 rounded-[4rem] p-16 md:p-32 shadow-2xl relative overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-[#4ade80]/5 to-transparent opacity-50" />
             <div className="relative z-10 text-center space-y-24">
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-7xl font-black text-white font-lexend tracking-tighter uppercase">Outcome & Impact</h2>
+                <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">Outcome & Impact</h2>
                 <div className="w-24 h-1.5 bg-[#4ade80] mx-auto rounded-full" />
               </div>
 
@@ -225,10 +227,10 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
           </section>
         </Reveal>
 
-        {/* Target Users Section */}
+        {/* 8. Target Users (Kon use karega?) */}
         <section className="space-y-16">
           <Reveal className="text-center space-y-4">
-            <h2 className="text-4xl md:text-6xl font-black text-white font-lexend tracking-tighter uppercase">Target Users</h2>
+            <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">Target Users</h2>
             <div className="w-16 h-1.5 bg-zinc-800 mx-auto rounded-full" />
           </Reveal>
 
@@ -243,11 +245,11 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
           </div>
         </section>
 
-        {/* Future Roadmap Section */}
+        {/* 9. Future Roadmap (Aagay kya?) */}
         <section className="max-w-5xl mx-auto space-y-24">
           <Reveal className="text-center space-y-4">
-            <h2 className="text-4xl md:text-7xl font-black text-white font-lexend tracking-tighter uppercase">Future Roadmap</h2>
-            <p className="text-zinc-500 font-bold uppercase tracking-[0.4em] text-xs">Strategic Vision & Evolution</p>
+            <h2 className="text-[14px] font-black text-white font-lexend tracking-[0.3em] uppercase">Future Roadmap</h2>
+            <p className="text-[12px] text-zinc-500 font-bold uppercase tracking-[0.4em]">Strategic Vision & Evolution</p>
           </Reveal>
 
           <div className="grid grid-cols-1 gap-8">
