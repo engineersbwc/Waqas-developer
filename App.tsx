@@ -50,7 +50,7 @@ const App: React.FC = () => {
       <ScrollIndicator />
       <Navbar onContactClick={triggerContact} />
 
-      <main className="transition-all duration-300 pt-24 md:pt-0">
+      <main className="transition-all duration-300 pt-16 md:pt-0">
         <Reveal>
           <Hero onContactClick={triggerContact} />
         </Reveal>
