@@ -188,7 +188,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
               `}
           >
             {PROJECTS.map((project) => (
-              <div key={project.id} className="w-[85vw] md:w-full max-w-[380px] mx-auto h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
+              <div key={project.id} className="w-[85vw] md:w-full max-w-[420px] mx-auto h-full flex-shrink-0 snap-center md:snap-align-none mr-4 md:mr-0 inline-block align-top">
                 <div
                   onClick={() => handleClick(project)}
                   className="
