@@ -101,11 +101,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLinkClick, vis
           </button>
         </div>
 
-        <div className="lg:hidden w-[60px]" />
+        <div className="lg:hidden w-[80px]" />
       </nav>
 
       {/* Mobile Header Bar */}
-      <div className={`md:hidden fixed top-0 left-0 right-0 z-[9998] flex items-center justify-between px-20 py-4 bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/5 transition-all duration-500 ${!isVisible ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'}`}>
+      <div className={`md:hidden fixed top-0 left-0 right-0 z-[9998] flex items-center justify-between px-6 py-4 bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/5 transition-all duration-500 ${!isVisible ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'}`}>
         <div
           className="flex flex-col items-start cursor-pointer transition-transform active:scale-95"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLinkClick, vis
           <div className="text-lg font-black font-lexend tracking-tighter text-white leading-none">
             Innovita
           </div>
-          <div className="text-[10px] font-black font-lexend tracking-[0.3em] text-[#4ade80] leading-none mt-0 uppercase">
+          <div className="text-[3px] font-black font-lexend tracking-[0.2em] text-[#4ade80] leading-none mt-0 uppercase">
             Soft
           </div>
         </div>
@@ -121,25 +121,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLinkClick, vis
         {/* Hamburger Menu Right */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-[10000]"
+          className="w-5 h-10 flex flex-col items-center justify-center gap-1 relative z-[10000]"
         >
-          <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-          <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+          <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       <div className={`md:hidden fixed inset-0 z-[997] bg-[#1a1a1a] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full pt-20 px-12 pb-2">
+        <div className="flex flex-col h-full pt-20 px-8 pb-4">
           {/* Menu Links */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleLinkClick(e, link.id)}
-                className="text-2xl font-black text-white hover:text-[#4ade80] transition-colors font-lexend uppercase tracking-tighter"
+                className="text-1xl font-black text-white hover:text-[#4ade80] transition-colors font-lexend uppercase tracking-tighter"
               >
                 {link.name}
               </a>
@@ -153,9 +153,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLinkClick, vis
                 onContactClick(e);
                 setIsMobileMenuOpen(false);
               }}
-              className="w-full py-4 bg-[#4ade80] text-black font-black text-lg rounded-2xl flex items-center justify-center gap-3 active:scale-95 transition-transform"
+              className="w-[300px] py-6 bg-[#4ade80] text-black font-black text-lg rounded-2xl flex items-center justify-center gap-3 active:scale-95 transition-transform"
             >
-              <div className="w-2.5 h-2.5 rounded-full bg-black animate-pulse" />
+              <div className="w-3.5 h-2.5 rounded-full bg-black animate-pulse" />
               <span>Book a Call</span>
             </button>
           </div>
