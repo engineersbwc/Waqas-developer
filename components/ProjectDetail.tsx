@@ -67,15 +67,31 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
         {/* Top Section: Title & Development Type */}
         <Reveal>
           <div className="text-center space-y-8">
-            <h1 className="text-[26px] font-black text-white font-lexend tracking-tighter leading-none uppercase max-w-5xl mx-auto">
+            <h1 className="text-[26px] font-black text-white font-lexend tracking-tighter leading-none uppercase max-w-5xl mx-auto mb-8">
               {project.title}
             </h1>
-            <div className="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+            <div className="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
               <span className="text-sm md:text-lg font-bold text-zinc-400 tracking-tight flex items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80] mr-3 animate-pulse" />
                 {project.category || 'Expert Software Development'}
               </span>
             </div>
+
+            {(project.link || project.url) && (
+              <div>
+                <a
+                  href={project.link || project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-10 py-4 bg-white text-black rounded-full font-black text-xs uppercase tracking-[0.3em] hover:bg-[#4ade80] transition-all duration-500 scale-100 hover:scale-105 shadow-2xl"
+                >
+                  View Live Project
+                  <svg className="ml-4 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            )}
           </div>
         </Reveal>
 
@@ -292,22 +308,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
           </div>
         </section>
 
-        {/* Final CTA */}
-        {project.url && (
-          <Reveal className="pt-20 text-center pb-20">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-12 py-6 bg-white text-black rounded-full font-black text-xs uppercase tracking-[0.3em] hover:bg-[#4ade80] transition-all duration-500 scale-100 hover:scale-105 shadow-2xl"
-            >
-              Visit Live Project
-              <svg className="ml-4 w-5 h-5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                <path d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </a>
-          </Reveal>
-        )}
+
       </main>
     </div>
   );

@@ -171,7 +171,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
           <h2 className="text-[28px] font-bold text-white font-lexend tracking-tight mb-2 text-center">
             Our Work
           </h2>
-          <div className="w-20 h-1.5 bg-[#4ade80] mx-auto rounded-full" />
+          <div className="w-12 h-0.5 bg-[#4ade80] mx-auto rounded-full opacity-50" />
         </div>
 
         {/* Project Cards Grid - Responsive Layout */}

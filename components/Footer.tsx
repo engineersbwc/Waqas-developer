@@ -92,7 +92,6 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight">Instagram</a></li>
               <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight">LinkedIn</a></li>
-              <li><a href="https://medium.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold tracking-tight">Medium</a></li>
             </ul>
           </div>
         </div>
