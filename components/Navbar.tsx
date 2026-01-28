@@ -104,9 +104,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLinkClick, vis
         <div className="lg:hidden w-[60px]" />
       </nav>
 
-      {/* Mobile Header Bar */}
+      {/* Mobile Top Brand Bar */}
       <div className={`md:hidden fixed top-0 left-0 right-0 z-[9998] flex items-center justify-between px-6 py-4 bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/5 transition-all duration-500 ${!isVisible ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'}`}>
-        {/* Logo Left */}
         <div
           className="flex flex-col items-start cursor-pointer transition-transform active:scale-95"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -118,49 +117,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLinkClick, vis
             Soft
           </div>
         </div>
-
-        {/* Hamburger Menu Right */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-[10000]"
-        >
-          <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-          <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`md:hidden fixed inset-0 z-[9997] bg-[#1a1a1a] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full pt-24 px-8 pb-12">
-          {/* Menu Links */}
-          <div className="flex flex-col gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                onClick={(e) => handleLinkClick(e, link.id)}
-                className="text-4xl font-black text-white hover:text-[#4ade80] transition-colors font-lexend uppercase tracking-tighter"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Menu Bottom Action */}
-          <div className="mt-auto">
-            <button
-              onClick={(e) => {
-                onContactClick(e);
-                setIsMobileMenuOpen(false);
-              }}
-              className="w-full py-5 bg-[#4ade80] text-black font-black text-lg rounded-2xl flex items-center justify-center gap-3 active:scale-95 transition-transform"
+      {/* Mobile Bottom Navigation Bar */}
+      <div className={`md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] w-[90%] max-w-[400px] transition-all duration-500 ${!isVisible ? 'opacity-0 translate-y-10 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
+        <nav className="flex items-center justify-around bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-2xl px-2 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={(e) => handleLinkClick(e, link.id)}
+              className="flex flex-col items-center gap-1 px-3 py-1 text-[9px] font-bold text-zinc-400 hover:text-[#4ade80] transition-all"
             >
-              <div className="w-2.5 h-2.5 rounded-full bg-black animate-pulse" />
-              <span>Book a Call</span>
-            </button>
-          </div>
-        </div>
+              <span className="uppercase tracking-widest">{link.name}</span>
+              <div className="w-1 h-1 rounded-full bg-transparent group-hover:bg-[#4ade80]" />
+            </a>
+          ))}
+          <button
+            onClick={onContactClick}
+            className="ml-2 bg-[#4ade80] text-black w-10 h-10 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(74,222,128,0.3)] active:scale-90 transition-transform"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+          </button>
+        </nav>
       </div>
     </>
   );

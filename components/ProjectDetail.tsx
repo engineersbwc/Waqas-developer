@@ -82,7 +82,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
         {/* 2. Project Overview - 16:8 Image + Card */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-4 items-stretch">
           <Reveal className="h-full">
-            <div className="relative h-full min-h-[400px] group overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl">
+            <div className="relative h-full min-h-[300px] md:min-h-[400px] group overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-white/10 bg-zinc-900 shadow-2xl">
               <img
                 src={project.image}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -92,7 +92,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
             </div>
           </Reveal>
           <Reveal className="h-full">
-            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-8">
+            <div className="h-full p-8 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[2rem] md:rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-8">
               <div className="space-y-4">
                 <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">
                   Project Overview
@@ -108,7 +108,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
         {/* 3. Project Profile (Basic Info) - Card + 16:8 Image */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-4 items-stretch">
           <Reveal className="h-full">
-            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-12">
+            <div className="h-full p-8 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[2rem] md:rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-12">
               <div className="space-y-4">
                 <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">
                   Project Profile
@@ -141,7 +141,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
             </div>
           </Reveal>
           <Reveal className="h-full">
-            <div className="relative h-full min-h-[400px] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
+            <div className="relative h-full min-h-[300px] md:min-h-[400px] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
               <img
                 src={project.gallery?.[0] || project.image}
                 className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
@@ -154,7 +154,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
         {/* 4 & 5. Problem & Solution - 16:8 Visual + Card */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-4 items-stretch">
           <Reveal className="h-full">
-            <div className="relative h-full min-h-[400px] rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
+            <div className="relative h-full min-h-[300px] md:min-h-[400px] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
               <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
               <img
                 src={project.gallery?.[1] || project.image}
@@ -164,7 +164,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
             </div>
           </Reveal>
           <Reveal className="h-full">
-            <div className="h-full p-10 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-16">
+            <div className="h-full p-8 md:p-14 bg-[#1a1a1a] border border-white/5 rounded-[2rem] md:rounded-[3rem] shadow-2xl flex flex-col justify-start space-y-16">
               <div className="space-y-8">
                 <div className="space-y-4">
                   <h3 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">The Problem</h3>
@@ -200,7 +200,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(project.features || ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5', 'Feature 6']).slice(0, 6).map((feature, idx) => (
               <Reveal key={idx} delay={idx * 0.1} className="h-full">
-                <div className="h-full p-10 rounded-[2.5rem] bg-[#1a1a1a] border border-white/5 hover:border-white/10 transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
+                <div className="h-full p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-[#1a1a1a] border border-white/5 hover:border-white/10 transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:border-[#4ade80]/30 transition-colors">
                       <span className="text-[#4ade80] font-black text-xs">0{idx + 1}</span>
@@ -216,7 +216,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
 
         {/* 7. Outcome & Impact Section - Large Card */}
         <Reveal>
-          <section className="bg-[#1a1a1a] border border-white/10 rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden text-center">
+          <section className="bg-[#1a1a1a] border border-white/10 rounded-[2rem] md:rounded-[4rem] p-10 md:p-24 shadow-2xl relative overflow-hidden text-center">
             <div className="space-y-4 mb-16">
               <h2 className="text-[16px] font-black text-white font-lexend tracking-[0.1em] uppercase">Outcome & Impact</h2>
               <div className="w-16 h-1 bg-[#4ade80] mx-auto rounded-full" />

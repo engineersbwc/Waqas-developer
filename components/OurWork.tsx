@@ -176,9 +176,8 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
 
         {/* Project Cards Grid - Responsive Layout */}
         <div className="
-          flex flex-nowrap overflow-x-auto overflow-y-hidden gap-6 pb-2 px-4 -mx-4 
+          flex flex-col gap-8 px-0 -mx-0 
           md:grid md:grid-cols-2 md:gap-y-8 md:gap-x-0 md:px-0 md:mx-0 md:overflow-visible
-          snap-x snap-mandatory scrollbar-hide
         ">
           {PROJECTS.map((project, index) => (
             <div
@@ -186,8 +185,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
               className={`
                 group relative flex-none flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden cursor-pointer 
                 transition-all duration-500 hover:border-white/20 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]
-                w-[85vw] md:w-[92%] max-w-[580px]
-                snap-center
+                w-full md:w-[92%] max-w-[580px]
                 ${index % 2 === 0 ? 'md:ml-auto md:mr-4' : 'md:mr-auto md:ml-4'}
               `}
               onClick={() => onProjectClick(project)}
@@ -196,8 +194,8 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
               <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
               {/* Top: Thumbnail Area with 3D Animation restored */}
-              <div className="relative h-[240px] md:h-[340px] overflow-hidden bg-zinc-900/5 flex items-center justify-center">
-                <div className="w-full h-full p-8 md:p-8 flex items-center justify-center overflow-visible">
+              <div className="relative h-[280px] md:h-[340px] overflow-hidden bg-zinc-900/5 flex items-center justify-center">
+                <div className="w-full h-full p-4 md:p-8 flex items-center justify-center overflow-visible">
                   <YodaProjectImage
                     image={project.image}
                     title={project.title}
