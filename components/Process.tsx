@@ -45,7 +45,7 @@ export const Process: React.FC = () => {
   // Automated flow removed as per request
 
   return (
-    <section id="process" className="py-12 md:py-20 px-6 bg-[#1a1a1a] overflow-hidden relative">
+    <section id="process" className="py-8 md:py-10 px-6 bg-[#1a1a1a] overflow-hidden relative">
       <div className="max-w-7xl mx-auto">
 
         {/* Centered Heading */}

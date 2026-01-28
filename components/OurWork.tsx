@@ -162,7 +162,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
   };
 
   return (
-    <section id="work" className="pb-20 md:pb-32 bg-[#1a1a1a] relative overflow-hidden">
+    <section id="work" className="pb-8 md:pb-12 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#4ade80]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -176,8 +176,8 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
 
         {/* Project Cards Grid - Responsive Layout */}
         <div className="
-          flex flex-nowrap overflow-x-auto overflow-y-hidden gap-6 pb-8 px-4 -mx-4 
-          md:grid md:grid-cols-2 md:gap-y-12 md:gap-x-0 md:px-0 md:mx-0 md:overflow-visible
+          flex flex-nowrap overflow-x-auto overflow-y-hidden gap-6 pb-2 px-4 -mx-4 
+          md:grid md:grid-cols-2 md:gap-y-8 md:gap-x-0 md:px-0 md:mx-0 md:overflow-visible
           snap-x snap-mandatory scrollbar-hide
         ">
           {PROJECTS.map((project, index) => (
@@ -196,12 +196,20 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
               <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
               {/* Top: Thumbnail Area with 3D Animation restored */}
-              <div className="relative h-[260px] md:h-[320px] overflow-hidden bg-zinc-900/5 flex items-center justify-center">
-                <div className="w-full h-full p-6 md:p-8 flex items-center justify-center overflow-visible">
+              <div className="relative h-[240px] md:h-[340px] overflow-hidden bg-zinc-900/5 flex items-center justify-center">
+                <div className="w-full h-full p-8 md:p-8 flex items-center justify-center overflow-visible">
                   <YodaProjectImage
                     image={project.image}
                     title={project.title}
-                    className={project.id === 'skip' ? 'w-[88%] md:w-[85%] h-[82%]' : ''}
+                    className={
+                      project.id === 'skip'
+                        ? 'w-[85%] md:w-[85%] h-[82%]'
+                        : project.id === 'p1'
+                          ? 'w-[85%] h-[85%]'
+                          : project.id === 'p3' || project.id === 'p2'
+                            ? 'w-[85%] h-[85%]'
+                            : ''
+                    }
                   />
                 </div>
               </div>
@@ -223,7 +231,7 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
         </div>
 
         {/* See More Work Button */}
-        <div className="mt-16 md:mt-24 flex justify-center">
+        <div className="mt-4 md:mt-6 flex justify-center">
           <button className="flex items-center space-x-4 group px-12 py-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-700 shadow-xl relative overflow-hidden">
             <div className="flex items-center space-x-4 z-10">
               <div className="w-2.5 h-2.5 rounded-full bg-[#4ade80] animate-pulse shadow-[0_0_15px_#4ade80]" />

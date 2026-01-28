@@ -5,7 +5,7 @@ import { Reveal } from './Reveal';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-20 md:py-32 px-6 bg-[#1a1a1a] relative overflow-hidden">
+    <section id="testimonials" className="py-10 md:py-16 px-6 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#f5ba41]/5 rounded-full blur-[160px] pointer-events-none" />
 

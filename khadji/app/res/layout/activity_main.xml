@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ============ APP TITLE SECTION ============ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📱 Java Practice Programs"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"/>
+
+        <!-- ============ INPUT SECTION CARD ============ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Input Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📝 Enter Input:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Input Field -->
+                <EditText
+                    android:id="@+id/inputField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type here... (alphabet/number/name)"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:background="@android:drawable/edit_text"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ============ OPERATIONS SELECTION CARD ============ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Operations Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 Select Operation:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Radio Group for All Operations -->
+                <RadioGroup
+                    android:id="@+id/operationGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@android:color/transparent"
+                    android:showDividers="middle">
+
+                    <!-- Q#1: Vowel Checker -->
+                    <RadioButton
+                        android:id="@+id/radioVowel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Q#1: Check Vowel ✓"
+                        android:textSize="16sp"
+                        android:textColor="#444444"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <!-- Q#2: Grade Calculator -->
+                    <RadioButton
+                        android:id="@+id/radioGrade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Q#2: Grade Calculator 📊"
+                        android:textSize="16sp"
+                        android:textColor="#444444"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <!-- Q#3: Even/Odd Checker -->
+                    <RadioButton
+                        android:id="@+id/radioEvenOdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Q#3: Check Even/Odd 🔢"
+                        android:textSize="16sp"
+                        android:textColor="#444444"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <!-- Q#4: Print Name -->
+                    <RadioButton
+                        android:id="@+id/radioPrintName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Q#4: Print Name 5 Times 📝"
+                        android:textSize="16sp"
+                        android:textColor="#444444"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <!-- Q#5: Multiplication Table -->
+                    <RadioButton
+                        android:id="@+id/radioTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Q#5: Multiplication Table ✖️"
+                        android:textSize="16sp"
+                        android:textColor="#444444"
+                        android:padding="12dp"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ============ CALCULATE BUTTON ============ -->
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🚀 CALCULATE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#2196F3"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <!-- ============ RESULT DISPLAY CARD ============ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#E3F2FD">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Result Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📋 Result:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1976D2"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Result Display Area -->
+                <TextView
+                    android:id="@+id/resultText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your result will appear here...\n\nSelect an operation and press CALCULATE button!"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:minHeight="150dp"
+                    android:gravity="start|top"
+                    android:padding="12dp"
+                    android:background="#FFFFFF"
+                    android:lineSpacingExtra="4dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ============ FOOTER SECTION ============ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Made with ❤️ for Java Learning"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
