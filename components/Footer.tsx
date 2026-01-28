@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
             <div className="text-3xl font-black font-lexend tracking-tighter text-white mb-6">
-              Invt<span className="text-[#f5ba41]">.</span>
+              Invt<span className="text-[#4ade80]">.</span>
               <div className="text-[12px] leading-tight text-zinc-500 uppercase tracking-[0.2em]">Soft</div>
             </div>
             <p className="text-zinc-500 text-lg leading-relaxed mb-8 max-w-sm">
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col space-y-4">
               <button
                 onClick={(e) => handleLinkClick(e, 'contact')}
-                className="group relative bg-[#f5ba41] text-black font-black py-5 px-8 rounded-2xl hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(245,186,65,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] overflow-hidden"
+                className="group relative bg-[#4ade80] text-black font-black py-5 px-8 rounded-2xl hover:bg-white transition-all duration-500 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-3 text-sm tracking-widest uppercase">
                   <span>Start a Project</span>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="mt-10">
-              <a href="mailto:contact@innovitasoft.com" className="text-zinc-400 hover:text-[#f5ba41] transition-colors text-lg font-medium underline underline-offset-8 decoration-zinc-800 hover:decoration-[#f5ba41]/40">
+              <a href="mailto:contact@innovitasoft.com" className="text-zinc-400 hover:text-[#4ade80] transition-colors text-lg font-medium underline underline-offset-8 decoration-zinc-800 hover:decoration-[#4ade80]/40">
                 contact@innovitasoft.com
               </a>
             </div>

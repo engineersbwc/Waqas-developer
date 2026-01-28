@@ -11,12 +11,12 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
   return (
     <section id="services" className="pt-4 pb-8 md:pt-6 md:pb-12 px-6 bg-[#1a1a1a] relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#f5ba41]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#4ade80]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-[28px] font-bold text-white font-lexend tracking-tight mb-2">Services</h2>
-          <div className="w-12 h-0.5 bg-[#f5ba41] mx-auto rounded-full opacity-50"></div>
+          <div className="w-12 h-0.5 bg-[#4ade80] mx-auto rounded-full opacity-50"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8">
@@ -38,50 +38,46 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
 
                   {/* Card Content Layout */}
                   <div className="flex flex-col h-full">
+                    <h3 className="text-lg md:text-xl font-bold text-[#F5F5F5] mb-4 font-lexend tracking-tight leading-tight whitespace-nowrap">
+                      {service.title}
+                    </h3>
 
-                    <div className="w-full flex flex-col">
-                      <h3 className="text-lg md:text-xl font-bold text-[#F5F5F5] mb-4 font-lexend tracking-tight leading-tight whitespace-nowrap">
-                        {service.title}
-                      </h3>
+                    {/* Static Service Image */}
+                    <div className={`
+                      relative w-full rounded-xl overflow-hidden mb-6 border border-white/5 bg-zinc-900/50
+                      ${!isTopRow ? 'aspect-[4/3]' : 'aspect-video'}
+                    `}>
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className={`
+                          gridimagestyle w-full h-full grayscale-0 opacity-100 transition-opacity duration-300
+                          object-cover
+                        `}
+                        draggable="false"
+                      />
+                      <div className="absolute inset-0 bg-black/5 rounded-xl" />
+                    </div>
 
-                      {/* Static Service Image */}
-                      <div className={`
-                        relative w-full rounded-xl overflow-hidden mb-6 border border-white/5 bg-zinc-900/50
-                        ${!isTopRow ? 'aspect-[4/3]' : 'aspect-video'}
-                      `}>
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className={`
-                            gridimagestyle w-full h-full grayscale-0 opacity-100 transition-opacity duration-300
-                            object-cover
-                          `}
-                          draggable="false"
-                        />
-                        <div className="absolute inset-0 bg-black/5 rounded-xl" />
-                      </div>
+                    <p className="text-[#A1A1AA] text-sm md:text-base leading-relaxed font-medium mb-6">
+                      {service.description}
+                    </p>
 
-                      <p className="text-[#A1A1AA] text-sm md:text-base leading-relaxed font-medium mb-6">
-                        {service.description}
-                      </p>
+                    {/* Button at the bottom */}
+                    <div className="mt-auto flex justify-center md:justify-start">
+                      <button
+                        onClick={onContactClick}
+                        className="
+                          px-8 py-3 rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] text-[#E5E5E5] 
+                          text-[10px] font-black tracking-[0.2em] uppercase transition-all 
+                          hover:bg-[#2A2A2A] hover:border-[#3a3a3a] active:bg-[#1a1a1a] active:border-[#2a2a2a]
+                          w-full md:w-auto
+                        "
+                      >
+                        Get In Touch
+                      </button>
                     </div>
                   </div>
-
-                  {/* Button at the bottom */}
-                  <div className="mt-auto flex justify-center md:justify-start">
-                    <button
-                      onClick={onContactClick}
-                      className="
-                        px-8 py-3 rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] text-[#E5E5E5] 
-                        text-[10px] font-black tracking-[0.2em] uppercase transition-all 
-                        hover:bg-[#2A2A2A] hover:border-[#3a3a3a] active:bg-[#1a1a1a] active:border-[#2a2a2a]
-                        w-full md:w-auto
-                      "
-                    >
-                      Get In Touch
-                    </button>
-                  </div>
-
                 </div>
               </div>
             );
@@ -91,5 +87,3 @@ export const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
     </section>
   );
 };
-
-

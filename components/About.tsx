@@ -14,12 +14,12 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="py-10 md:py-4 px-6 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#f5ba41]/5 rounded-full blur-[10px] -mr-64 -mt-64"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4ade80]/5 rounded-full blur-[10px] -mr-64 -mt-64"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
           <Reveal>
-            <p className="text-[#f5ba41] font-bold text-xs uppercase tracking-[0.4em] mb-6 font-lexend">Our Studio</p>
+            <p className="text-[#4ade80] font-bold text-xs uppercase tracking-[0.4em] mb-6 font-lexend">Our Studio</p>
             <h2 className="text-4xl md:text-4xl font-black text-white font-lexend tracking-tighter leading-none mb-8 uppercase">
               About <br />
               <span className="text-zinc-400">Us.</span>
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
               <ul className="grid grid-cols-1 gap-4">
                 {trustPoints.map((point, idx) => (
                   <li key={idx} className="flex items-center space-x-3 group">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#f5ba41] group-hover:scale-125 transition-transform"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#4ade80] group-hover:scale-125 transition-transform"></div>
                     <span className="text-zinc-500 text-sm font-medium group-hover:text-zinc-300 transition-colors">{point}</span>
                   </li>
                 ))}

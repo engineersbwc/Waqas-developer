@@ -33,15 +33,15 @@ export const ContactCTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-[#1a1a1a] overflow-hidden relative">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-10 px-6 bg-[#1a1a1a] overflow-hidden relative">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="inline-block px-3 py-1 rounded-full border border-[#f5ba41]/20 bg-[#f5ba41]/5 mb-5">
-              <p className="text-[#f5ba41] font-bold text-[9px] uppercase tracking-[0.3em]">Project Request</p>
+            <div className="inline-block px-3 py-1 rounded-full border border-[#4ade80]/20 bg-[#4ade80]/5 mb-5">
+              <p className="text-[#4ade80] font-bold text-[9px] uppercase tracking-[0.3em]">Project Request</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 font-lexend tracking-tighter leading-none">
-              Let's Scale <span className="text-[#f5ba41]">Together.</span>
+              Let's Scale <span className="text-[#4ade80]">Together.</span>
             </h2>
             <p className="text-zinc-500 text-lg font-medium leading-relaxed max-w-sm mb-10">
               Fast turnaround, elite quality, and zero friction. We respond in &lt;12h.
@@ -53,7 +53,7 @@ export const ContactCTA: React.FC = () => {
                 { label: 'Support', text: 'Lifetime maintenance' }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#f5ba41]">
+                  <div className="w-8 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#4ade80]">
                     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path d="M5 13l4 4L19 7" />
                     </svg>
@@ -80,7 +80,7 @@ export const ContactCTA: React.FC = () => {
                   <p className="text-zinc-400">Thanks for reaching out. We'll get back to you within 12 hours.</p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="mt-8 text-[#f5ba41] text-xs font-bold uppercase tracking-widest hover:text-white transition-colors"
+                    className="mt-8 text-[#4ade80] text-xs font-bold uppercase tracking-widest hover:text-white transition-colors"
                   >
                     Send another message
                   </button>
@@ -88,17 +88,17 @@ export const ContactCTA: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="name" required placeholder="Name" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#f5ba41] transition-all" />
-                    <input type="email" name="email" required placeholder="Email" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#f5ba41] transition-all" />
+                    <input type="text" name="name" required placeholder="Name" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#4ade80] transition-all" />
+                    <input type="email" name="email" required placeholder="Email" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#4ade80] transition-all" />
                   </div>
-                  <input type="text" name="company" placeholder="Company (Optional)" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#f5ba41] transition-all" />
-                  <textarea name="description" required rows={3} placeholder="How can we help?" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white text-sm outline-none focus:border-[#f5ba41] transition-all resize-none"></textarea>
+                  <input type="text" name="company" placeholder="Company (Optional)" className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white text-sm outline-none focus:border-[#4ade80] transition-all" />
+                  <textarea name="description" required rows={3} placeholder="How can we help?" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white text-sm outline-none focus:border-[#4ade80] transition-all resize-none"></textarea>
 
                   {/* Budget Slider */}
                   <div className="space-y-4 pt-2">
                     <label className="flex items-center justify-between text-sm font-bold text-zinc-400">
                       <span>Project Budget</span>
-                      <span className="text-[#f5ba41]">${budget}</span>
+                      <span className="text-[#4ade80]">${budget}</span>
                     </label>
                     <input
                       type="range"
@@ -107,7 +107,7 @@ export const ContactCTA: React.FC = () => {
                       step="100"
                       value={budget}
                       onChange={(e) => setBudget(Number(e.target.value))}
-                      className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#f5ba41]"
+                      className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#4ade80]"
                     />
                     <input type="hidden" name="budget" value={budget} />
                     <div className="flex justify-between text-[10px] text-zinc-600 font-bold uppercase tracking-widest">
@@ -125,7 +125,7 @@ export const ContactCTA: React.FC = () => {
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="w-full bg-[#f5ba41] text-black py-5 rounded-xl font-black text-base tracking-[0.15em] uppercase hover:bg-white transition-all shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-[#4ade80] text-black py-5 rounded-xl font-black text-base tracking-[0.15em] uppercase hover:bg-white transition-all shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {status === 'submitting' ? 'Sending...' : 'Submit Request'}
                   </button>

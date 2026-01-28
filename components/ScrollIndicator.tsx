@@ -26,7 +26,7 @@ export const ScrollIndicator: React.FC = () => {
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-[2px] z-[60]">
         <div
-          className="h-full bg-[#f5ba41] transition-all duration-150 ease-out yellow-glow"
+          className="h-full bg-[#4ade80] transition-all duration-150 ease-out green-glow"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -34,7 +34,7 @@ export const ScrollIndicator: React.FC = () => {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-[#1a1a1a] border border-white/10 text-[#f5ba41] transition-all duration-300 hover:scale-110 ${showTopButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-[#1a1a1a] border border-white/10 text-[#4ade80] transition-all duration-300 hover:scale-110 ${showTopButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
           }`}
         aria-label="Back to top"
       >
