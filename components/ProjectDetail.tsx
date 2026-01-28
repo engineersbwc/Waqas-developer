@@ -2,38 +2,62 @@
 import React, { useEffect } from 'react';
 import { Project } from '../types';
 import { Reveal } from './Reveal';
+import { Navbar } from './Navbar';
 
 interface ProjectDetailProps {
   project: Project;
-  onBack: () => void;
+  onBack: (targetId?: string) => void;
+  onContactClick: (e?: React.MouseEvent) => void;
 }
 
-export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
+export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, onContactClick }) => {
+  const [isVisible, setIsVisible] = React.useState(true);
+  const [lastScrollY, setLastScrollY] = React.useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.body.style.overflow = 'hidden';
+
+    // Simple scroll listener to sync with Navbar's hide/show behavior
+    const handleScroll = () => {
+      const currentScrollY = document.querySelector('.fixed.inset-0')?.scrollTop || 0;
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    const scrollContainer = document.querySelector('.fixed.inset-0');
+    scrollContainer?.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
       document.body.style.overflow = 'unset';
+      scrollContainer?.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <div className="fixed inset-0 z-[2000] bg-[#121212] overflow-y-auto animate-in slide-in-from-bottom duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
-      <nav className="sticky top-0 z-[2100] bg-[#121212]/90 backdrop-blur-xl px-6 py-8 border-b border-white/10">
+      {/* Back Button Navigation Bar (No Main Navbar) */}
+      <nav className={`sticky top-0 z-[2100] bg-[#121212]/90 backdrop-blur-xl px-6 py-6 border-b border-white/10 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <button
-            onClick={onBack}
+            onClick={() => onBack('work')}
             className="group flex items-center space-x-4 text-zinc-400 hover:text-white transition-all"
           >
-            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 group-hover:border-white transition-all">
-              <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 group-hover:border-white transition-all">
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
             </div>
-            <span className="text-[11px] font-black uppercase tracking-[0.2em]">Back to Work</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em]">Back to Work</span>
           </button>
-          <div className="hidden sm:block text-[10px] font-black tracking-[0.4em] uppercase text-zinc-300">
-            Case Study &bull; {project.title}
+          <div className="hidden sm:block">
+            {/* Case Study section removed */}
           </div>
         </div>
       </nav>

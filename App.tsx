@@ -32,15 +32,28 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
-  const handleCloseProject = () => {
+  const handleCloseProject = (targetId: string = 'work') => {
     setActiveProject(null);
+    // Use a small delay to ensure the component has rendered before scrolling
+    setTimeout(() => {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      } else if (targetId === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 50);
   };
 
   // Render Project Detail View if a project is selected
   if (activeProject) {
     return (
       <div className="min-h-screen bg-[#121212]">
-        <ProjectDetail project={activeProject} onBack={handleCloseProject} />
+        <ProjectDetail
+          project={activeProject}
+          onBack={handleCloseProject}
+          onContactClick={triggerContact}
+        />
       </div>
     );
   }
