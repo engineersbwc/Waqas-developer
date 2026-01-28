@@ -186,7 +186,7 @@ export const STEPS: Step[] = [
     title: 'Requirement Analysis',
     description: 'We dive deep into your goals to define the perfect strategy.',
     icon: '📋',
-    image: '/images/process/step1.jpg'
+    image: '/images/process/requirement-analysis.png'
   },
   {
     id: 2,
@@ -194,7 +194,7 @@ export const STEPS: Step[] = [
     title: 'UI/UX Design',
     description: 'Creating intuitive and stunning interfaces your users will love.',
     icon: '🎨',
-    image: '/images/process/step2.jpg'
+    image: '/images/process/ui-ux-design.png'
   },
   {
     id: 3,
@@ -202,7 +202,7 @@ export const STEPS: Step[] = [
     title: 'Development',
     description: 'Turning designs into high-performance, scalable code.',
     icon: '💻',
-    image: '/images/process/step3.jpg'
+    image: '/images/process/development.png'
   },
   {
     id: 4,
@@ -210,7 +210,7 @@ export const STEPS: Step[] = [
     title: 'Testing & QA',
     description: 'Rigorous testing to ensure a bug-free, seamless experience.',
     icon: '🧪',
-    image: '/images/process/step4.jpg'
+    image: '/images/process/testing-qa.png'
   },
   {
     id: 5,
@@ -218,7 +218,7 @@ export const STEPS: Step[] = [
     title: 'Delivery',
     description: 'Launching your product and providing ongoing assistance.',
     icon: '🚀',
-    image: '/images/process/step5.jpg'
+    image: '/images/process/delivery.jpg'
   }
 ];
 
@@ -229,7 +229,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'CEO at Techflow',
     content: 'The team at Innovita Soft delivered a flawless product. Their clean design and technical expertise surpassed our expectations.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150'
+    image: ''
   },
   {
     id: 't2',
@@ -237,7 +237,47 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Founder of Nexus',
     content: 'Professional, responsive, and innovative. They turned our complex idea into a simple, high-impact mobile solution.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150'
+    image: ''
+  },
+  {
+    id: 't3',
+    name: 'David Wilson',
+    role: 'Product Manager',
+    content: 'Exceeded all deadlines and provided exceptional code quality. A pleasure to work with from start to finish.',
+    rating: 5,
+    image: ''
+  },
+  {
+    id: 't4',
+    name: 'Emma Thompson',
+    role: 'Marketing Director',
+    content: 'Transformed our brand identity into a modern, high-converting digital experience. Truly impressive work.',
+    rating: 5,
+    image: ''
+  },
+  {
+    id: 't5',
+    name: 'James Rodriguez',
+    role: 'Startup Founder',
+    content: 'The fastest delivery I have ever seen. They understood our vision instantly and executed it perfectly.',
+    rating: 5,
+    image: ''
+  },
+  {
+    id: 't6',
+    name: 'Lisa Anderson',
+    role: 'Operations Lead',
+    content: 'Sophisticated solutions that simplified our entire business process. Their attention to detail is unmatched.',
+    rating: 5,
+    image: ''
+  },
+  {
+    id: 't7',
+    name: 'Robert Taylor',
+    role: 'Tech Lead',
+    content: 'Deep technical knowledge combined with an eye for design. They are our go-to partner for all critical projects.',
+    rating: 5,
+    image: ''
   }
 ];
 

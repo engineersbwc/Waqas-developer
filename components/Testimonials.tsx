@@ -5,14 +5,15 @@ import { Reveal } from './Reveal';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-10 md:py-16 px-6 bg-[#1a1a1a] relative overflow-hidden">
+    <section id="testimonials" className="py-4 md:py-4 px-2 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#f5ba41]/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#f5ba41]/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <Reveal className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-lexend tracking-tighter mb-4 uppercase">Social Proof</h2>
-          <p className="text-zinc-500 font-medium font-inter uppercase tracking-[0.3em] text-xs md:text-sm italic">What our clients say about us</p>
+      <div className="max-w-10xl mx-auto relative z-10">
+        <Reveal className="text-center mb-2 md:mb-4
+        ">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white font-lexend tracking-tighter mb-4 uppercase">Social Proof</h2>
+          <p className="text-zinc-500 font-medium font-inter uppercase tracking-[0.1em] text-xs md:text-sm italic">What our clients say about us</p>
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">

@@ -175,20 +175,29 @@ export const OurWork: React.FC<OurWorkProps> = ({ onProjectClick }) => {
         </div>
 
         {/* Project Cards Grid - Responsive Layout */}
-        <div className="
-          flex flex-col gap-8 px-0 -mx-0 
-          md:grid md:grid-cols-2 md:gap-y-8 md:gap-x-0 md:px-0 md:mx-0 md:overflow-visible
-        ">
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className="
+            flex flex-nowrap overflow-x-auto overflow-y-hidden gap-6 pb-4 px-4 -mx-4 
+            md:grid md:grid-cols-2 md:gap-y-8 md:gap-x-0 md:px-0 md:mx-0 md:overflow-visible
+            snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing
+          "
+        >
           {PROJECTS.map((project, index) => (
             <div
               key={project.id}
               className={`
                 group relative flex-none flex flex-col bg-[#3a3a3a] border border-white/10 rounded-[24px] overflow-hidden cursor-pointer 
                 transition-all duration-500 hover:border-white/20 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]
-                w-full md:w-[92%] max-w-[580px]
+                w-[85vw] md:w-[92%] max-w-[580px]
+                snap-center
                 ${index % 2 === 0 ? 'md:ml-auto md:mr-4' : 'md:mr-auto md:ml-4'}
               `}
-              onClick={() => onProjectClick(project)}
+              onClick={() => handleClick(project)}
             >
               {/* Grainy Texture Overlay */}
               <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
