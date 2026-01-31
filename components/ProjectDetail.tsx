@@ -205,58 +205,58 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
         </section>
 
         {/* 6. Key Features (Highlights) - Card Grid */}
-        <section className="space-y-16">
-          <Reveal className="text-center space-y-4">
-            <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">
+        <section className="space-y-8">
+          <Reveal className="text-center space-y-3">
+            <h2 className="text-[22px] font-black text-white font-lexend tracking-[0.1em] uppercase">
               Key Features
             </h2>
-            <div className="w-16 h-1 bg-zinc-800 mx-auto rounded-full" />
+            <div className="w-12 h-0.5 bg-zinc-800 mx-auto rounded-full" />
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {(project.features || ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5', 'Feature 6']).slice(0, 6).map((feature, idx) => (
-              <Reveal key={idx} delay={idx * 0.1} className="h-full">
-                <div className="h-full p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-[#1a1a1a] border border-white/5 hover:border-white/10 transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
+              <Reveal key={idx} delay={idx * 0.05} className="h-full">
+                <div className="h-full p-5 md:p-6 rounded-[1.5rem] bg-[#1a1a1a] border border-white/5 hover:border-white/10 transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:border-[#4ade80]/30 transition-colors">
-                      <span className="text-[#4ade80] font-black text-xs">0{idx + 1}</span>
+                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center mb-4 border border-white/5 group-hover:border-[#4ade80]/30 transition-colors">
+                      <span className="text-[#4ade80] font-black text-[10px]">0{idx + 1}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-3 font-lexend">{feature}</h3>
+                    <h3 className="text-base font-bold text-white mb-2 font-lexend">{feature}</h3>
                   </div>
-                  <p className="text-[12px] text-zinc-600 font-black uppercase tracking-widest mt-auto pt-4 border-t border-white/5">Core Highlight</p>
+                  <p className="text-[10px] text-zinc-600 font-black uppercase tracking-widest mt-auto pt-3 border-t border-white/5">Core Highlight</p>
                 </div>
               </Reveal>
             ))}
           </div>
         </section>
 
-        {/* 7. Outcome & Impact Section - Large Card */}
+        {/* 7. Outcome & Impact Section - Compact Card */}
         <Reveal>
-          <section className="bg-[#1a1a1a] border border-white/10 rounded-[2rem] md:rounded-[4rem] p-10 md:p-24 shadow-2xl relative overflow-hidden text-center">
-            <div className="space-y-4 mb-16">
-              <h2 className="text-[16px] font-black text-white font-lexend tracking-[0.1em] uppercase">Outcome & Impact</h2>
-              <div className="w-16 h-1 bg-[#4ade80] mx-auto rounded-full" />
+          <section className="bg-[#1a1a1a] border border-white/10 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-2xl relative overflow-hidden text-center">
+            <div className="space-y-2 mb-8">
+              <h2 className="text-[18px] font-black text-white font-lexend tracking-[0.1em] uppercase">Outcome & Impact</h2>
+              <div className="w-12 h-0.5 bg-[#4ade80] mx-auto rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 items-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 items-center">
               {project.outcomes?.map((outcome, idx) => (
-                <div key={idx} className="space-y-2 group">
-                  <div className="text-[22px] font-black text-white font-lexend group-hover:text-[#4ade80] transition-colors">{outcome.split(' ')[0]}</div>
-                  <div className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.4em]">{outcome.split(' ').slice(1).join(' ')}</div>
+                <div key={idx} className="space-y-1 group p-3 rounded-xl bg-white/5">
+                  <div className="text-[14px] font-black text-white font-lexend group-hover:text-[#4ade80] transition-colors">{outcome.split(' ')[0]}</div>
+                  <div className="text-[9px] font-bold text-zinc-500 uppercase tracking-[0.2em]">{outcome.split(' ').slice(1).join(' ')}</div>
                 </div>
               )) || (
                   <>
-                    <div className="space-y-2">
-                      <div className="text-1xl md:text-6xl font-black text-white font-lexend">60%</div>
-                      <div className="text-[6px] font-black text-zinc-500 uppercase tracking-[0.4em]">Workload Reduction</div>
+                    <div className="space-y-1 p-3 rounded-xl bg-white/5">
+                      <div className="text-xl font-black text-white font-lexend">60%</div>
+                      <div className="text-[9px] font-bold text-zinc-500 uppercase tracking-[0.2em]">Workload Reduction</div>
                     </div>
-                    <div className="space-y-4">
-                      <div className="text-2xl md:text-6xl font-black text-white font-lexend">24/7</div>
-                      <div className="text-[6px] font-black text-zinc-500 uppercase tracking-[0.4em]">Active Support</div>
+                    <div className="space-y-1 p-3 rounded-xl bg-white/5">
+                      <div className="text-xl font-black text-white font-lexend">24/7</div>
+                      <div className="text-[9px] font-bold text-zinc-500 uppercase tracking-[0.2em]">Active Support</div>
                     </div>
-                    <div className="space-y-4">
-                      <div className="text-2xl md:text-6xl font-black text-white font-lexend">Top</div>
-                      <div className="text-[6px] font-black text-zinc-500 uppercase tracking-[0.4em]">Market Performance</div>
+                    <div className="space-y-1 p-3 rounded-xl bg-white/5">
+                      <div className="text-xl font-black text-white font-lexend">Top</div>
+                      <div className="text-[9px] font-bold text-zinc-500 uppercase tracking-[0.2em]">Market Performance</div>
                     </div>
                   </>
                 )}
@@ -264,43 +264,42 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, o
           </section>
         </Reveal>
 
-        {/* 8. Target Users (Kon use karega?) - Tag Cloud Card */}
-        <section className="space-y-12">
-          <Reveal className="text-center space-y-4">
-            <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.1em] uppercase">Target Users</h2>
-            <div className="w-16 h-1 bg-zinc-800 mx-auto rounded-full" />
+        {/* 8. Target Users - Compact Tag Cloud */}
+        <section className="space-y-3">
+          <Reveal className="text-center space-y-6">
+            <h2 className="text-[20px] font-black text-white font-lexend tracking-[0.1em] uppercase">Target Users</h2>
+            <div className="w-12 h-0.5 bg-zinc-800 mx-auto rounded-full" />
           </Reveal>
 
           <Reveal className="max-w-4xl mx-auto">
-            <div className="p-10 md:p-16 bg-[#1a1a1a] border border-white/5 rounded-[3rem] shadow-2xl flex flex-wrap justify-center gap-4">
+            <div className="p-6 md:p-8 bg-[#1a1a1a] border border-white/5 rounded-[1.5rem] shadow-2xl flex flex-wrap justify-center gap-3">
               {(project.targetUsers || ['Small Businesses', 'Startups', 'Operations Managers', 'Support Teams']).map((user, idx) => (
-                <div key={idx} className="px-8 py-4 rounded-2xl bg-white/5 border border-white/5 hover:border-[#4ade80]/30 transition-all cursor-default">
-                  <span className="text-[12px] font-black text-zinc-400 uppercase tracking-[0.2em]">{user}</span>
+                <div key={idx} className="px-5 py-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-[#4ade80]/30 transition-all cursor-default">
+                  <span className="text-[11px] font-black text-zinc-400 uppercase tracking-[0.15em]">{user}</span>
                 </div>
               ))}
             </div>
           </Reveal>
         </section>
 
-        {/* 9. Future Roadmap (Aagay kya?) - Timeline Cards */}
-        <section className="max-w-5xl mx-auto space-y-16">
-          <Reveal className="text-center space-y-4">
-            <h2 className="text-[26px] font-black text-white font-lexend tracking-[0.3em] uppercase">Future Roadmap</h2>
-            <p className="text-[16px] text-zinc-500 font-bold uppercase tracking-[0.4em]">Planned Evolution</p>
+        {/* 9. Future Roadmap - Compact Timeline */}
+        <section className="max-w-4xl mx-auto space-y-6">
+          <Reveal className="text-center space-y-2">
+            <h2 className="text-[20px] font-black text-white font-lexend tracking-[0.2em] uppercase">Future Roadmap</h2>
+            <p className="text-[12px] text-zinc-500 font-bold uppercase tracking-[0.3em]">Planned Evolution</p>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {(project.futureEnhancements || ['Feature A', 'Feature B', 'Feature C']).map((item, idx) => (
-              <Reveal key={idx} delay={idx * 0.1} className="h-full">
-                <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-10 p-10 md:p-12 rounded-[3rem] bg-[#1a1a1a] border border-white/5 group hover:border-[#4ade80]/30 transition-all relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-zinc-800 group-hover:bg-[#4ade80] transition-all" />
-                  <div className="text-3xl md:text-5xl font-black text-zinc-900 group-hover:text-[#4ade80]/10 transition-colors font-lexend shrink-0">0{idx + 1}</div>
+              <Reveal key={idx} delay={idx * 0.05} className="h-full">
+                <div className="flex items-center space-x-4 p-4 md:p-5 rounded-xl bg-[#1a1a1a] border border-white/5 group hover:border-[#4ade80]/30 transition-all relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-zinc-800 group-hover:bg-[#4ade80] transition-all" />
+                  <div className="text-lg font-black text-zinc-700 group-hover:text-[#4ade80]/30 transition-colors font-lexend shrink-0 pl-2">0{idx + 1}</div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-1 font-lexend">{item}</h4>
-                    <span className="text-[20px] text-zinc-600 font-black uppercase tracking-widest block">Phase Milestone</span>
+                    <h4 className="text-sm font-bold text-white font-lexend">{item}</h4>
                   </div>
-                  <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center shrink-0">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover:bg-[#4ade80] transition-colors" />
+                  <div className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-[#4ade80] transition-colors" />
                   </div>
                 </div>
               </Reveal>

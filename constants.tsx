@@ -106,43 +106,106 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'p2',
-    title: 'Revamping Joe & The Juice’s Mobile Experience',
-    description: 'A complete redesign of the mobile experience for the global coffee and juice bar chain.',
-    image: '/original-1e646266fcc220b3fde3bab3088c8d26.webp',
+    title: '2Sale — The Unified Smart Marketplace & Community Hub',
+    description: 'A pioneering mobile application ecosystem designed to integrate diverse online marketplaces with a robust social communication platform, targeting the Arab world.',
+    vision: '2Sale is a pioneering mobile application ecosystem designed to integrate diverse online marketplaces with a robust social communication platform, primarily targeting the Arab world. It aims to simplify and amplify the online selling and buying experience by offering multi-platform advertising, personalized e-stores, and interactive community features.',
+    image: '/images/projects/joe-juice.png',
     tag: 'MOBILE APP',
-    client: 'Joe & The Juice',
-    timeline: '2021',
-    category: 'Retail & F&B',
-    services: ['Mobile App Redesign', 'UX/UI Strategy', '3D Illustrations'],
+    link: 'https://play.google.com/store/apps/details?id=com.twosale.two_sale&pli=1',
+    gallery: ['/images/projects/joe-juice.png'],
+    client: '2SaLe - توسيل',
+    category: 'Mobile / E-commerce / Marketplace',
+    platform: 'Mobile (iOS & Android)',
+    role: 'UI/UX Designer & Developer',
+    designAesthetic: 'Bold Red Theme, Modern Arabic Typography, Clean Layouts',
+    corePalette: 'Vibrant Red, White, Deep Black Accents',
     technologies: ['Flutter', 'Firebase', 'Node.js'],
-    link: '#',
-    vision: 'Joe & The Juice is a global lifestyle brand. Our goal was to translate their unique in-store vibe into a digital experience that feels just as energetic, seamless, and premium.',
-    problemStatement: 'The legacy app was outdated, suffering from complex navigation, slow purchase flows, and a disconnect from the brand’s vibrant physical identity. Users struggled with loyalty redemption and ordering efficiency.',
-    solution: 'We engineered a complete UI/UX overhaul focusing on speed and immersion. We introduced seamless "One-Tap Reorder", integrated 3D interactive elements for product visualization, and simplified the loyalty rewards system to drive engagement.',
-    process: [
-      { phase: 'Discovery & Prototyping', description: 'Analyzed user behavior data to identify friction points. Created low-fidelity wireframes to test new navigation structures.' },
-      { phase: 'Visual Design & 3D', description: 'Developed a high-energy visual language using the brand\'s signature pink and black palette, enhanced with custom 3D juice renders.' },
-      { phase: 'Development & Testing', description: 'Built the app using Flutter for cross-platform consistency. Rigorous A/B testing ensured the new flows significantly reduced time-to-order.' },
-      { phase: 'Feature Expansion', description: 'Rolled out advanced features like "Order Ahead" and geo-fenced notifications for pickup readiness.' }
+    problemStatement: 'Individual sellers struggle with fragmented online selling across multiple platforms, limited ad reach, high barriers to e-commerce entry, lack of integrated communication tools, and inefficient trade relationship building in conventional marketplaces.',
+    solution: 'We created a unified platform that centralizes advertising across 12 apps with one click, democratizes e-commerce with Smart Store feature, integrates powerful Group Chat for direct communication, and builds trade relationships through integrated chat functionalities.',
+    features: [
+      'One-Click Multi-Platform Advertising (12 Apps)',
+      'Smart Store - Personalized E-commerce',
+      'Group Chat - Private & Public Conversations',
+      'Smart Market Platform Integration',
+      'Real-time Negotiation & Community',
+      'Multi-Vendor Support (4Sale, OPSQ, Kuwait Cars)'
     ],
-    features: ['Seamless Purchase Flow', '3D Product Visualization', 'One-Tap Reorder', 'Loyalty Integration', 'Live Order Tracking'],
-    outcomes: ['5X Higher Engagement', '98% Customer Satisfaction', '100% Eco-Friendly Packaging'],
-    targetUsers: ['Daily Commuters', 'Health Enthusiasts', 'Gen Z & Millennials'],
-    futureEnhancements: ['Subscription Model', 'AR Menu Experience', 'Social Gifting'],
-    faq: [
-      { question: 'How long did the redesign take?', answer: 'The entire project, from discovery to launch, was completed in 6 months.' },
-      { question: 'Did you build for both iOS and Android?', answer: 'Yes, we used Flutter to ensure a flawless native experience on both platforms simultaneously.' },
-      { question: 'What was the biggest challenge?', answer: 'Balancing the high-fidelity 3D visuals with app performance to ensure instant load times on all devices.' },
-      { question: 'How did you measure success?', answer: 'We tracked conversion rates, app store ratings, and daily active user (DAU) retention, all of which saw significant growth.' }
+    outcomes: [
+      'Increased Visibility & Sales',
+      'Empowered Small Businesses',
+      'Enhanced User Engagement',
+      'Market Leadership in Arab World',
+      'Simplified User Experience'
+    ],
+    targetUsers: [
+      'Individual Sellers',
+      'Small & Medium Businesses',
+      'Service Providers',
+      'Buyers & Shoppers',
+      'Advertisers'
+    ],
+    futureEnhancements: [
+      'AI-Powered Recommendations',
+      'Advanced Analytics for Sellers',
+      'Escrow & Secure Payment',
+      'Logistics & Delivery Integration',
+      'Multilingual Support',
+      'Gamification & Loyalty Programs',
+      'Voice Search & AI Assistant'
     ]
   },
   {
     id: 'p3',
-    title: 'UX/UI – Code Desk Studio',
-    description: 'A social media and marketplace app for items.',
-    image: '/images/projects/squad.png',
+    title: 'Would You Rather? — Battle of Wits & Choices',
+    description: 'A captivating mobile game developed using Flutter, designed to challenge players with thought-provoking dilemmas. Combines quiz-style engagement with strategic decision-making for a fun and competitive experience.',
+    vision: '"Would You Rather?" is a captivating mobile game that masterfully combines elements of quiz-style engagement with strategic decision-making. The game boasts diverse content categories, flexible game modes (including tournament mode), and team play capabilities. Its robust backend tracks achievements and offers detailed performance overviews, making every choice meaningful.',
+    image: '/images/projects/would-you-rather.png',
     tag: 'UX/UI',
-    link: '#'
+    link: 'https://play.google.com/store/apps/details?id=com.wyrsquad.game&pcampaignid=web_share',
+    gallery: ['/images/projects/would-you-rather.png'],
+    client: 'Would You Rather?',
+    category: 'Mobile Game / Casual / Quiz',
+    platform: 'Mobile (Android, iOS)',
+    role: 'UI/UX Designer',
+    designAesthetic: 'Dark Sophisticated UI, Modern Minimalism, Vibrant Accent Colors',
+    corePalette: 'Deep Dark Gray, Vibrant Purple Accents, Golden Highlights',
+    technologies: ['Flutter', 'Firebase', 'Dart'],
+    problemStatement: 'Many mobile quiz and dilemma games suffer from: Stale UI/UX with generic interfaces causing eye fatigue, Lack of Depth with simple mechanics without strategic elements, Limited Replayability with finite questions, and Poor Performance with sluggish animations and cross-platform inconsistencies.',
+    solution: 'We addressed these challenges with: Immersive Dark UI creating a sophisticated, low-distraction environment; Engaging Gameplay Modes with tournament and team play for strategic depth; Extensible Content Categories for high replayability; Clear Progression & Achievements system; and Flutter\'s cross-platform performance advantage.',
+    features: [
+      'Diverse Dilemma Categories (Dark, Fun, Love, Weird)',
+      'Multiple Game Modes (Default, Medium, Hard, Tournament)',
+      'Team Play (Team A vs Team B)',
+      'Real-time Scoring & Progress',
+      'Comprehensive Achievements System',
+      'Performance Overview & Statistics',
+      'Intuitive Search & Filter',
+      'Sleek Dark UI Design'
+    ],
+    outcomes: [
+      'High User Engagement & Retention',
+      'Positive User Feedback on Design',
+      'Strong Brand Identity',
+      'Scalable Architecture',
+      'Premium Monetization Potential'
+    ],
+    targetUsers: [
+      'Social Gamers',
+      'Casual Gamers',
+      'Decision-Making Enthusiasts',
+      'Competitive Spirits',
+      'Young Adults & Teens'
+    ],
+    futureEnhancements: [
+      'User-Generated Content (UGC)',
+      'Friends List & Direct Challenges',
+      'In-Game Chat',
+      'Themed UI Skins',
+      'Timed Challenges Mode',
+      'Daily Challenges',
+      'Multi-language Localization',
+      'Web & Desktop Versions'
+    ]
   }
 ];
 
